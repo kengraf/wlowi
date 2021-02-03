@@ -1,7 +1,7 @@
-/*global WildRydes _config*/
+/*global Wlowi _config*/
 
-var WildRydes = window.WildRydes || {};
-WildRydes.map = WildRydes.map || {};
+var Wlowi = window.Wlowi || {};
+Wlowi.map = Wlowi.map || {};
 
 (function esriMapScopeWrapper($) {
     require([
@@ -18,7 +18,7 @@ WildRydes.map = WildRydes.map || {};
         Graphic, Point, TextSymbol,
         PictureMarkerSymbol, webMercatorUtils
     ) {
-        var wrMap = WildRydes.map;
+        var wrMap = Wlowi.map;
 
         var map = new Map({ basemap: 'gray-vector' });
 
