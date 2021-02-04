@@ -2187,7 +2187,6 @@ img {
         border: none;
         cursor: pointer;
         outline: none;
-        position: absolute;
         padding: 0;
         right: 1.25rem;
         top: 1.25rem;
@@ -2380,7 +2379,7 @@ img {
 
 
 .home-story {
-        background: url(../images/wr-home-about.jpg) no-repeat bottom;
+        background: url(../images/img_3.jpg) no-repeat bottom;
         background-size: cover;
         color: #fff;
         text-align: center;
