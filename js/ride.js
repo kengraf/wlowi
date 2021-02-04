@@ -15,7 +15,7 @@ Wlowi.map = Wlowi.map || {};
         alert(error);
         window.location.href = '/signin.html';
     });
-    function requestUnicorn(pickupLocation) {
+    function requestGame(pickupLocation) {
         $.ajax({
             method: 'POST',
             url: _config.api.invokeUrl + '/ride',
@@ -33,20 +33,20 @@ Wlowi.map = Wlowi.map || {};
             error: function ajaxError(jqXHR, textStatus, errorThrown) {
                 console.error('Error requesting ride: ', textStatus, ', Details: ', errorThrown);
                 console.error('Response: ', jqXHR.responseText);
-                alert('An error occured when requesting your unicorn:\n' + jqXHR.responseText);
+                alert('An error occured when requesting your game:\n' + jqXHR.responseText);
             }
         });
     }
 
     function completeRequest(result) {
-        var unicorn;
+        var game;
         var pronoun;
         console.log('Response received from API: ', result);
-        unicorn = result.Unicorn;
-        pronoun = unicorn.Gender === 'Male' ? 'his' : 'her';
-        displayUpdate(unicorn.Name + ', your ' + unicorn.Color + ' unicorn, is on ' + pronoun + ' way.');
+        game = result.Game;
+        pronoun = game.Gender === 'Male' ? 'his' : 'her';
+        displayUpdate(game.Name + ', your ' + game.Color + ' game, is on ' + pronoun + ' way.');
         animateArrival(function animateCallback() {
-            displayUpdate(unicorn.Name + ' has arrived. Giddy up!');
+            displayUpdate(game.Name + ' has arrived. Giddy up!');
             Wlowi.map.unsetLocation();
             $('#request').prop('disabled', 'disabled');
             $('#request').text('Set Pickup');
@@ -72,14 +72,14 @@ Wlowi.map = Wlowi.map || {};
 
     function handlePickupChanged() {
         var requestButton = $('#request');
-        requestButton.text('Request Unicorn');
+        requestButton.text('Request game');
         requestButton.prop('disabled', false);
     }
 
     function handleRequestClick(event) {
         var pickupLocation = Wlowi.map.selectedPoint;
         event.preventDefault();
-        requestUnicorn(pickupLocation);
+        requestGame(pickupLocation);
     }
 
     function animateArrival(callback) {
