@@ -2187,6 +2187,7 @@ img {
         border: none;
         cursor: pointer;
         outline: none;
+        position: absolute;
         padding: 0;
         right: 1.25rem;
         top: 1.25rem;
@@ -2337,19 +2338,6 @@ img {
         margin: 0;
         text-indent: -999em;
         position: relative
-}
-
-@media screen and (min-width:75em) {
-        .page-home .site-header .title:after {
-                background: -webkit-linear-gradient(top, transparent, rgba(243, 8, 85, .85) 99%, rgba(245, 8, 86, .85));
-                background: linear-gradient(180deg, transparent 0, rgba(243, 8, 85, .85) 99%, rgba(245, 8, 86, .85));
-                content: '';
-                height: 3.75rem;
-                width: 100%;
-                position: absolute;
-                left: 0;
-                bottom: 0
-        }
 }
 
 .page-home .home-button {
