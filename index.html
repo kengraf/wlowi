@@ -1,113 +1,282 @@
 <!DOCTYPE html>
-<html class="no-js" lang="">
-<head>
-  <meta charset="utf-8">
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Wlowi</title>
-
-  <link rel="stylesheet" href="css/font.css">
-  <link rel="stylesheet" href="css/main.css">
-
-  <script src="js/vendor/modernizr.js"></script>
-</head>
-<body class="page-home">
-
-  <header class="site-header">
-    <h1 class="title">Wlowi</h1>
-    <nav class="site-nav">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="register.html">Register</a></li>
-        <li><a href="signin.html">SignIn</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-      </ul>
-    </nav>
-    <div class="row column large-9 xlarge-6 xxlarge-4">
-      <button type="button" class="btn-menu"><span>Menu</span></button>
-      <a class="home-button" href="/register.html">Register</a>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Wlowi</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="css/bootstrap.min.css?ver=1.1.0" rel="stylesheet">
+    <link href="css/mdb.min.css?ver=1.1.0" rel="stylesheet">
+    <link href="css/wlowi.css?ver=1.1.0" rel="stylesheet">
+  </head>
+  <body id="top">
+    <header>
+      <!-- Navbar-->
+      <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar" id="navbar">
+        <div class="container"><a class="navbar-brand" href="#"><img style="width:30px;margin-right:3px" src="img/eagle-logo-white.png"><strong>Wlowi</strong></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+          <div class="collapse navbar-collapse" id="navbarContent">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item"><a class="nav-link" href="#">Donate</a></li>
+              <li class="nav-item"><a class="nav-link active" href="game.html">Game</a></li>
+              <li class="nav-item"><a class="nav-link" href="register.html">Register</a></li>
+              <li class="nav-item"><a class="nav-link" href="signin.html">Sign-in</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- Intro Section-->
+      <section class="view hm-gradient" id="intro">
+        <div class="site-bg-img d-flex align-items-center">
+          <div class="container">
+            <div class="row no-gutters">
+              <div class="col-md-10 col-lg-6 text-center text-md-left margins">
+                <div class="white-text">
+                  <div class="wow fadeInLeft" data-wow-delay="0.3s">
+                    <div class="row no-gutters d-flex justify-content-center"><img class="col-4 mb-4" src="img/eagle-logo-white.png"></div>
+                    <h1 class="h1-responsive font-weight-bold mt-sm-5">Knowledge is power.</h1>
+                    <div class="h4">
+                      Wlowi is a simple defend/attack simulation game.  With progressive levels to let you
+                      plan cyber defenses against increasing sophisticated adversaries.
+                    </div>
+                  </div><br>
+                  <div class="wow fadeInLeft" data-wow-delay="0.3s">
+                    <a class="btn btn-outline-white" href="register.html">Register</a>
+                    <a class="btn btn-outline-white" href="signin.html">Sign-in</a>
+                    <a class="btn btn-white dark-grey-text font-weight-bold ml-0" href="https://youtube.com/" target="_blank">
+                      <i class="fa fa-play mr-1"></i> View Demo</a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </header>
+    <div id="content">
+<section class="text-center py-5 grey lighten-4" id="about">
+  <div class="container">
+    <div class="wow fadeIn">
+      <h2 class="h1 pt-5 pb-3">More info</h2>
     </div>
-    <div class="row column large-9 xlarge-6 xxlarge-4">
-      <button type="button" class="btn-menu"><span>Menu2</span></button>
-      <a class="home-button" href="/signin.html">Sign in</a>
+    <div class="row">
+      <div class="col-md-4 mb-5 wow fadeInUp" data-wow-delay=".3s">
+        <a href="/faqs.html"><i class="fa fa-question-circle fa-3x blue-text"></i>
+        <h3 class="h4 mt-3">FAQs</h3>
+        <p class="mt-3 blue-grey-text">
+          Just what is a Wlowi?  Answers to this and more.
+        </p></a>
+      </div>
+      <div class="col-md-4 mb-5 wow fadeInUp" data-wow-delay=".4s">
+              <a href="/faqs.html"><i class="fa fa-comments-o fa-3x blue-text"></i>
+        <h3 class="h4 mt-3 ">Instructions</h3>
+        <p class="mt-3 blue-grey-text">
+          TODO.
+        </p></a>
+      </div>
+      <div class="col-md-4 mb-5 wow fadeInUp" data-wow-delay=".5s">
+              <a href="/faqs.html"><i class="fa fa-cubes fa-3x blue-text"></i>
+        <h3 class="h4 mt-3">Strategy</h3>
+        <p class="mt-3 blue-grey-text">
+          Allocate your resources to protect things you can control (this changes as your organization get larger).
+          Focus on the the most likely attack methods.
+        </p></a>
+      </div>
     </div>
-    <a href="/register.html" class="button">Register</a>
-  </header>
-
-
-  <section class="home-story">
-    <div class="row column large-9 xlarge-6 xxlarge-4">
-      <h2 class="section-title">Our Story</h2>
-      <p class="content">
-        Wlowi was inspired by TDB.
+  </div>
+</section>
+<section class="py-5" id="projects">
+  <div class="container">
+    <div class="wow fadeIn">
+      <h2 class="text-center h1 my-4">Free Cybersecurity Resources</h2>
+      <p class="px-5 mb-5 pb-3 lead blue-grey-text text-center">
+        There are too many great sites to list them all here.  We have pcked some favorites to get you started.<br>
+        All free and friendly places to practice your craft.
       </p>
     </div>
-  </section>
-
-  <section class="home-sign-up">
-    <div class="row column">
-      <img class="icon-w" src="images/wr-home-W.jpg">
-
-      <form onsubmit="javascript:void(0);">
-        <input type="email" placeholder="Enter your email address">
-        <button type="button">Submit</button>
-      </form>
-
-      <h2 class="section-title">Sign Up</h2>
-
-      <p class="content">Wlowi is coming soon! Enter your email to enter the limited private beta</p>
-
-      <div class="apps">
-        <a class="app-icon" href=""><img src="images/wr-home-apple.jpg"></a>
-        <a class="app-icon" href=""><img src="images/wr-home-google.jpg"></a>
-        <a class="app-icon" href=""><img src="images/wr-home-blackberry.jpg"></a>
-        <a class="app-icon" href=""><img src="images/wr-home-Xiaomi.jpg"></a>
-      </div>
-
-      <div class="social">
-        <a class="icon-fb" href="">Facebook</a>
-        <a class="icon-tw" href="">Twitter</a>
-        <a class="icon-ig" href="">Instagram</a>
-        <a class="icon-wc" href="">Wechat</a>
-        <a class="icon-wb" href="">Weibo</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="home-quote">
-    <div class="row column medium-8 xxlarge-6">
-      <div class="quote-wrap">
-        <div class="quote">
-          Wlowi helped me really understand what I should do first, next and the thing after that.
+    <div class="row wow fadeInLeft" data-wow-delay=".3s">
+      <div class="col-lg-6 col-xl-5 pr-lg-5 pb-5"><img class="img-fluid rounded z-depth-2" src="img/img_2.jpg" alt="project image"/></div>
+      <div class="col-lg-6 col-xl-7 pl-lg-5 pb-4">
+        <div class="row mb-3">
+          <div class="col-1 mr-1"><i class="fa fa-book fa-2x red-text"></i></div>
+          <div class="col-10">
+            <a href="https://www.hackthebox.eu/"><h5 class="font-weight-bold">OWASP</h5>
+            <p class="grey-text">
+              <i>"A community of developers, technologists and evangelists improving the security of software".</i><br>
+              Check out the JuiceShop and SecurityShepard projects.
+            </p></a>
+          </div>
         </div>
-        <div class="quoter">- Satisfied Wlowi User</div>
+        <div class="row mb-3">
+          <div class="col-1 mr-1"><i class="fa fa-plug fa-2x red-text"></i></div>
+          <div class="col-10">
+            <a href="https://www.hackthebox.eu/"><h5 class="font-weight-bold">HackThe Box (HTB)</h5>
+            <p class="grey-text">
+              <i>"Hack The Box is an online platform allowing you to test and advance your skills in cyber security. 
+              Use it responsibly and don't hack your fellow members...".</i>
+            </p></a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-1 mr-1"><i class="fa fa-lock fa-2x red-text"></i></div>
+          <div class="col-10">
+            <a href="https://www.wechall.net/"><h5 class="font-weight-bold">We Chall</h5>
+            <p class="grey-text">
+              <i>WeChall is aiming to make a global ranking of challengers over multiple sites. It launched in january of 2008.</i><br>
+              A great site to find all types of cybersecurity challenge sites.  We suggest starting the 
+              popular sites that are highly rated for Fun.
+            </p></a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-1 mr-1"><i class="fa fa-university fa-2x red-text"></i></div>
+          <div class="col-10">
+            <a href="https://cryptohack.org/"><h5 class="font-weight-bold">Cryptohack</h5>
+            <p class="grey-text">
+              </i>"A fun platform for learning modern cryptograph".</i>
+            </p></a>
+          </div>
+        </div>
       </div>
     </div>
-  </section>
-
-
-  <footer class="site-footer">
-    <div class="row column">
-      <nav class="footer-nav">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="register.html">Register</a></li>
-          <li><a href="signin.html">SignIn</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-        </ul>
-      </nav>
+    <hr/>
+    <div class="row pt-5 wow fadeInRight" data-wow-delay=".3s">
+      <div class="col-lg-6 col-xl-7 mb-3">
+        <div class="row mb-3">
+          <div class="col-1 mr-1"><i class="fa fa-user fa-2x red-text"></i></div>
+          <div class="col-10">
+            <a href="https://ctf101.org/"><h5 class="font-weight-bold">CTF 101</h5>
+            <p class="grey-text">
+              <i>"Very often CTFs are the beginning of one's cyber security career due to their team building 
+              nature and competetive aspect. In addition, there isn't a lot of commitment required beyond a weekend.
+              In this guide/wiki/handbook you'll learn the techniques, thought processes, and methodologies you 
+              need to succeed in Capture the Flag competitions.".</i><br>
+            </p></a>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-1 mr-1"><i class="fa fa-tv fa-2x red-text"></i></div>
+          <div class="col-10">
+            <a href="https://defendtheweb.net/"><h5 class="font-weight-bold">Defend The Web</h5>
+            <p class="grey-text">
+              <i>"Defend the Web is an interactive security platform where you can learn and challenge your skills. 
+              Try and complete all of our 60+ hacking levels. Learn from our series of articles covering all aspects 
+              of security. Articles will guide you through the essentials to get started. 
+              As you progress more complex topics will be introduced to build up your knowledge.".</i><br> 
+            </p></a>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-1 mr-1"><i class="fa fa-book fa-2x red-text"></i></div>
+          <div class="col-10">
+            <a href="https://ctftime.org/ctfs"><h5 class="font-weight-bold">CTF Time</h5>
+            <p class="grey-text">
+              A well maintained list of Capture The Falg (CTF) events.  Worldwide listings many run by or for university students.
+            </p></a>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-1 mr-1"><i class="fa fa-lock fa-2x red-text"></i></div>
+          <div class="col-10">
+            <a href="https://github.com/kengraf/wlowi"><h5 class="font-weight-bold">Github Project: Wlowi</h5>
+            <p class="grey-text">
+              Source code for this application
+            </p></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 col-xl-5 mb-3"><img class="img-fluid rounded z-depth-2" src="img/img_art_3.jpg" alt="project image"/></div>
     </div>
-
-    <div class="row column">
-      <div class="footer-legal">
-        &copy;Wlowi Inc<br>
-        All Rights Reserved
+  </div>
+</section>
+<section id="contact">
+  <div class="rgba-black-strong py-5">
+    <div class="container">
+      <div class="wow fadeIn">
+        <h2 class="h1 text-white pt-5 pb-3 text-center">Contact us</h2>
+        <p class="text-white px-5 mb-5 pb-3 lead text-center">
+          Wlowi is a part-time project of passion.  We would love to hear any suggestions, complaints, and/or praise.
+          Tag the subject line with #WLOWI so your message avoids the spam death.
+        </p>
+      </div>
+      <div class="card mb-5 wow fadeInUp" data-wow-delay=".4s">
+        <div class="card-body p-5">
+          <div class="row">
+            <div class="col-md-8">
+              <form action="https://wlowi.cyber-unh.org/youremail@example.com" method="POST">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="md-form">
+                      <input class="form-control" id="name" type="text" name="name" required="required"/>
+                      <label for="name">Your name</label>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="md-form">
+                      <input class="form-control" id="email" type="text" name="_replyto" required="required"/>
+                      <label for="email">Your email</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="md-form">
+                      <input class="form-control" id="subject" type="text" name="subject" required="required"/>
+                      <label for="subject">Subject</label>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="md-form">
+                      <textarea class="form-control md-textarea" id="message" name="message" required="required"></textarea>
+                      <label for="message">Your message</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="center-on-small-only mb-4">
+                  <button class="btn btn-indigo ml-0" type="submit"><i class="fa fa-paper-plane-o mr-2"></i> Send</button>
+                </div>
+              </form>
+            </div>
+            <div class="col-md-4">
+              <ul class="list-unstyled text-center">
+                <li class="mt-4"><i class="fa fa-map-marker indigo-text fa-2x"></i>
+                  <p class="mt-2">33 Academic Way, Durham, NH 03824</p>
+                </li>
+                <li class="mt-4"><i class="fa fa-envelope indigo-text fa-2x"></i>
+                  <p class="mt-2">ken.graf@unh.edu</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </footer>
-
-  <script src="js/vendor.js"></script>
-
-  <script src="js/main.js"></script>
-</body>
+  </div>
+</section></div>
+    <footer class="page-footer indigo darken-2 center-on-small-only pt-0 mt-0">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="mb-5 flex-center">
+              <a class="px-3" href="https://www.facebook.com/groups/wildhats/"><i class="fa fa-facebook fa-lg white-text"></i></a>
+              <a class="px-3" href="https://twitter.com/graf_comp_sec"><i class="fa fa-twitter fa-lg white-text"></i></a>
+              <a class="px-3" href="https://www.linkedin.com/in/kengraf"><i class="fa fa-linkedin fa-lg white-text"></i></a>
+              <a class="px-3" href="https://github.com/kengraf/wlowi"><i class="fa fa-github fa-lg white-text"></i></a></div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright text-center py-3 font-small">
+        <div class="container-fluid">
+          <div>&copy; <a href="http://securityxing.com/">Security Crossing</a></div>
+        </div>
+      </div>
+    </footer>
+    <script type="text/javascript" src="scripts/jquery.min.js?ver=1.1.0"></script>
+    <script type="text/javascript" src="scripts/popper.min.js?ver=1.1.0"></script>
+    <script type="text/javascript" src="scripts/bootstrap.min.js?ver=1.1.0"></script>
+    <script type="text/javascript" src="scripts/wow.min.js?ver=1.1.0"></script>
+    <script type="text/javascript" src="scripts/mdb.min.js?ver=1.1.0"></script>
+    <script>new WOW().init();</script>
+  </body>
 </html>

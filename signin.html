@@ -1,26 +1,112 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width">
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Wlowi</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="css/bootstrap.min.css?ver=1.1.0" rel="stylesheet">
+    <link href="css/mdb.min.css?ver=1.1.0" rel="stylesheet">
+    <link href="css/wlowi.css?ver=1.1.0" rel="stylesheet">
+  </head>
+  <body id="top">
+    <header>
+      <!-- Navbar-->
+      <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar" id="navbar">
+        <div class="container"><a class="navbar-brand" href="#"><img style="width:30px;margin-right:3px" src="img/eagle-logo-white.png"><strong>Wlowi</strong></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+          <div class="collapse navbar-collapse" id="navbarContent">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item"><a class="nav-link" href="#">Donate</a></li>
+              <li class="nav-item"><a class="nav-link active" href="game.html">Game</a></li>
+              <li class="nav-item"><a class="nav-link" href="faqs.html">FAQs</a></li>
+              <li class="nav-item"><a class="nav-link" href="strategy.html">Strategy</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
 
-        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- Intro Section-->
+    <section class="view hm-gradient" id="intro">
+      <div class="site-bg-img d-flex align-items-center">
+        <div class="container">
+          <div class="row no-gutters">
+            <div class="col-md-10 col-lg-6 text-center text-md-left margins">
+              <div class="white-text">
+                <div class="wow fadeInLeft" data-wow-delay="0.3s">
+                  <div class="container">
+                    <div class="wow fadeIn">
+                      <h2 class="h1 text-white pt-5 pb-3 text-center">Sign In</h2>
+                    </div>
+                    <div class="card mb-5 wow fadeInUp" data-wow-delay=".4s">
+                      <div class="card-body p-5">
+                        <div class="row">
+                          <div class="col-md-8">
+                            <form action="https://wlowi.cyber-unh.org/youremail@example.com" method="POST">
+                              <div class="row">
+                                <div class="col-md-6">
+                                  <div class="md-form">
+                                    <input class="form-control" type="email" id="emailInputSignin" placeholder="Email"
+                                      name="_replyto" required="required"/>
+                                    <label for="emailInputSignin">Your email</label>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="col-md-12">
+                                  <div class="md-form">
+                                    <input class="form-control" type="password" id="passwordInputSignin" placeholder="Password" 
+                                      pattern=".*" name="_subject" required="required"/>
+                                    <label for="passwordInputSignin">Password</label>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="center-on-small-only mb-4">
+                                <button class="btn btn-indigo ml-0" type="submit"><i class="fa fa-paper-plane-o mr-2"></i> Sign In</button>
+                              </div>
+                            </form>
+                          </div>
+                       </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <link rel="stylesheet" href="css/font.css">
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/index.css">
-        <link rel="stylesheet" href="/css/message.css">
-    </head>
-    <body>
-        <!--[if lt IE 7]>
-            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
-        <![endif]-->
+    <footer class="page-footer indigo darken-2 center-on-small-only pt-0 mt-0">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="mb-5 flex-center">
+              <a class="px-3" href="https://www.facebook.com/groups/wildhats/"><i class="fa fa-facebook fa-lg white-text"></i></a>
+              <a class="px-3" href="https://twitter.com/graf_comp_sec"><i class="fa fa-twitter fa-lg white-text"></i></a>
+              <a class="px-3" href="https://www.linkedin.com/in/kengraf"><i class="fa fa-linkedin fa-lg white-text"></i></a>
+              <a class="px-3" href="https://github.com/kengraf/wlowi"><i class="fa fa-github fa-lg white-text"></i></a></div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright text-center py-3 font-small">
+        <div class="container-fluid">
+          <div>&copy; <a href="http://securityxing.com/">Security Crossing</a></div>
+        </div>
+      </div>
+    </footer>
+    <script type="text/javascript" src="scripts/jquery.min.js?ver=1.1.0"></script>
+    <script type="text/javascript" src="scripts/popper.min.js?ver=1.1.0"></script>
+    <script type="text/javascript" src="scripts/bootstrap.min.js?ver=1.1.0"></script>
+    <script type="text/javascript" src="scripts/wow.min.js?ver=1.1.0"></script>
+    <script type="text/javascript" src="scripts/mdb.min.js?ver=1.1.0"></script>
+    <script>new WOW().init();</script>
+
+    
 
         <div id="noCognitoMessage" class="configMessage" style="display: none;">
             <div class="backdrop"></div>
@@ -34,26 +120,10 @@
             </div>
         </div>
 
-        <header>
-          <img src="images/logo.png">
-        </header>
 
-
-        <section class="form-wrap">
-            <h1>Sign In</h1>
-            <form id="signinForm">
-              <input type="email" id="emailInputSignin" placeholder="Email" required>
-              <input type="password" id="passwordInputSignin" placeholder="Password" pattern=".*" required>
-
-              <input type="submit" value="Sign in">
-            </form>
-        </section>
-
-        <script src="js/vendor/jquery-3.1.0.js"></script>
-        <script src="js/vendor/bootstrap.min.js"></script>
-        <script src="js/vendor/aws-cognito-sdk.min.js"></script>
-        <script src="js/vendor/amazon-cognito-identity.min.js"></script>
-        <script src="js/config.js"></script>
-        <script src="js/cognito-auth.js"></script>
+        <script src="scripts/aws-cognito-sdk.min.js"></script>
+        <script src="scripts/amazon-cognito-identity.min.js"></script>
+        <script src="scripts/config.js"></script>
+        <script src="scripts/cognito-auth.js"></script>
     </body>
 </html>

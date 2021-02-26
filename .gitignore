@@ -1,2 +1,5 @@
+/js/package*
+/js/node_modules
+/js/*.test.js
 /wlowi.wpr
 /wlowi.wpu
