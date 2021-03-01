@@ -121,7 +121,7 @@ var Wlowi = window.Wlowi || {};
         signin(email, password,
             function signinSuccess() {
                 console.log('Successfully Logged In');
-                window.location.href = 'ride.html';
+                window.location.href = 'game.html';
             },
             function signinError(err) {
                 alert(err);
