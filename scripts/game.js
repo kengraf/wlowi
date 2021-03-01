@@ -20,7 +20,7 @@ let letsDefend = () => {
     
     // Run attacks
     attacks.forEach(function (e) {
-	attackObj = findId(e);
+	attackObj = findId(testData, e);
 	for( var d in attackObj.detections ) {
 	    if ( document.getElementById("defenseSwitch" + attackObj.detections[d]).checked === false ) {
 		// Defense is not working
@@ -66,6 +66,18 @@ let saveGame = () => {
 // TODO save button is rendered as an 'a' element
 }
 
+function allowDrop (ev) {
+ev.preventDefault();
+}
+function dragStart (ev) {
+ev.dataTransfer.setData ("text",  ev.target.id);
+}
+function dragDrop (ev) {
+ev.preventDefault ();
+var data =  ev.dataTransfer.getData ("text");
+ev.target.appendChild (document.getElementById(data));
+}
+
 let showResultModal = (obj) => {
     jQuery.noConflict();
     var m = $('#cardModal');
@@ -74,27 +86,33 @@ let showResultModal = (obj) => {
     m.modal('show');
 }
 
+let showCardModal = (id) => {
+    var m = jQuery('#cardModal');
+    let obj = findId(mitreAttack, id );
+    m.find('.modal-title').text(obj.name);
+    m.find('.modal-body').html(obj.description);
+    m.modal('show');
+}
+
 
 $('#cardModal').on('show.bs.modal', function (event) {
-    if (event.relatedTarget === undefined ) {
-	return;
-    }
-    
-    let id = event.relatedTarget.id.split('.')[1];
-    let obj = findId( id );
-    var modal = $(this)
-    modal.find('.modal-title').text(obj.title)
-    modal.find('.modal-body').html(obj.html)
+/*
+let button = $(event.relatedTarget)
+    let id = button.data("id");
+    let obj = findId( mitreAttack, id );
+    let modal = jQuery(this);
+    modal.find('.modal-title').text(obj.name)
+    modal.find('.modal-body').html(obj.description)
+*/
 });
 
     // Find an ID in the JSON data
-    let findId = (id) => {
+    let findId = (json, id) => {
 	let x;
-	var groups = "compromises"
 
-        for( var key in testData ) {
-	    if ( Array.isArray(testData[key]) ) {
-	        testData[key].forEach(function(obj) {
+        for( var key in json ) {
+	    if ( Array.isArray(json[key]) ) {
+	        json[key].forEach(function(obj) {
 		    if(obj.hasOwnProperty('id')){
 			if (obj.id === id ) {
 			    x = obj;
@@ -112,30 +130,13 @@ $('#cardModal').on('show.bs.modal', function (event) {
     }
 
     let updateStatus = () => {
-	var a = "SOC status: " + testData.status + " | Budget level: " + testData.budget;
-	document.getElementById("cardStatus").innerHTML = a;
+	var a = "RUN: Script Kiddies vs. Me, Myself, and I with " + testData.budget + " credits"
+	var b = document.getElementById("runDefense");
+	b.innerHTML = a;
+	b.style.background = "green";
     } 
     
-    // Generate cards for each attacker scenario
-    let createStatusCard = () => {
-	var html = [
-	    '<div class="container"><div class="row">',
-	    '<div role="tablist" aria-multiselectable="true" class="card col-12 mb-2 bg-success" >',
-	    '<h4 id="cardStatus" class="card-header" role="tab"></h4></div>',
-	    '</div><div class="row mb-4"><div class="col text-center">',
-	    '<a id="letsDefend" class="home-button" href="#" onclick="letsDefend();return false;">Let\'s Defend!</a>',
-	    '<a id="saveGame" class="home-button" href="#" onclick="saveGame();return false;">Save Game</a>',
-	    '</div></div></div></div>',
-	].join("\n");
-	$(body).append(html);
-	testData.status = "clear";
-	testData.budget = 4;
-	updateStatus();
-//todo example call	$('#letsDefend').click(function(){ letsDefend(); return false; });
-//todo example call	$('#saveGame').click(function(){ saveGame(); return false; });
-    }
-
-    // Generate cards for each attacker scenario
+    // Generate cards for each attacker scenario: TODO make this a modal
     let createAttackerCard = (proc) => {
 	var html = [
 	'<div id="attackCard' + proc.id + '" role="tablist" aria-multiselectable="true" class="card mb-3 bg-secondary" >',
@@ -148,70 +149,27 @@ $('#cardModal').on('show.bs.modal', function (event) {
 	$("#attackCard" + proc.id).removeClass().addClass('card mb-3 ' + 'bg-danger');
     }
 
-  
     // Generate cards for each defender procedure
-    let createDefenderCard = (row, proc) => {
+    let createMitigationCard = (div, proc) => {
 	var html = [
-	'<div id="defenseCard' + proc.id + '" role="tablist" aria-multiselectable="true" class="card mb-3 bg-secondary" >',
-	    '<h5 class="card-header" role="tab" id="heading' + proc.id +'">',
-		'<div class="custom-control custom-switch switch-lg">',
-		'<input type="checkbox" class="custom-control-input" onchange="changeDefenseState(this)" ',
-		    'data-target="changeDefenseState(this)" id="defenseSwitch' + proc.id + '">',
-		'<label class="custom-control-label h4" for="defenseSwitch' + proc.id + '"></label>' +proc.title,
-		'<a href="#cardModal" data-toggle="modal" id="info.' + proc.id + '">',
-		'<i class="fa fa-info-circle pull-right fa-lg"></i></a></div></h5>',
+	    '<div id="mitigationCard' + proc.id + '" draggable="true" ondragstart="dragStart (event)">',
+	    '<button class="cardBtn" onclick="showCardModal(\'' + proc.id + '\');event.preventDefault();">' + proc.name,
+	    '</button></div></div>',
 	].join("\n");
-	row.append(html);
-	$("#defenseCard" + proc.id).removeClass().addClass('card mb-3 ' + 'bg-secondary');
+	div.append(html);
     }
 
-    let createDefenderArea = (subBody) => {
+    let createMitigationArea = (subBody) => {
     	let defense  = testData.levels[testData.stage];
         let html = [
-	    '<div id="defenderArea" role="tablist" aria-multiselectable="true" class="card mb-3 bg-primary" >',
-	    '<h4 class="card-header" role="tab" >',
-	    '<a href="#cardModal" data-toggle="modal" id="stage.' + defense.id + '">',
-		'<p id="defenderLink" class="plink">' + defense.title + '</p></a></h4></div>',
+	'<div class="col" id="mitigationArea"></div>',
 	].join("\n");
 	subBody.append(html);
 	
-        testData.procedures.forEach(element => createDefenderCard(subBody, element ));
-    }
-    
-let handleAttackChange = (event) => {
-    scenario = testData.scenarios[2];
-};
-
-   
-    let createAttackerArea = (subBody) => {
-	let scenario = testData.scenarios[0];
-        let html = [
-	    '<div id="attackerArea" role="tablist" aria-multiselectable="true" class="card mb-3 bg-danger" >',
-	    '<h4 class="card-header" role="tab" ><a href="todo" >',
-	    '<a href="#cardModal" data-toggle="modal" id="scenario.' + scenario.id + '">',
-	    '<p id="attackerLink" class="plink">' + scenario.title + '</p></a></h4></div>',
-	].join("\n");
-	subBody.append(html);
+        mitreAttack.mitigations.forEach(element => createMitigationCard(jQuery('#mitigationArea'), element ));
     }
     
     
-    // Use Bootstrap alerts for messaging user
-    // alertType = ['alert-success','alert-warning','alert-danger','alert-info']
-    let showMessage = ( text, alertType ) => {
-	var alertBox = $(document.createElement('div'))
-	    .attr("class", "alert alert-success alert-dismissible fade show " + alertType );
-	alertBox.after().html(
-	   '<button type="button" class="close" data-dismiss="alert">&times;</button>' + text );
-	alertBox.appendTo(document.getElementById('alertBar'));
-	$(document).ready(function () {
-	    window.setTimeout(function() {
-		$(".alert").fadeTo(1000, 0).slideUp(1000, function() {
-		    $(this).remove(); 
-		});
-	    }, 5000);
-	});
-    }
-        
     function changeDefenseState(slider) { 
 	var id = slider.id.slice(-2);
 	// Determine if we can afford to enable the requirements
@@ -249,22 +207,16 @@ let handleAttackChange = (event) => {
     }
     
     let setStage = () => {
+	updateStatus();
+    return; // TODO mitre json fixes
 	let defense  = testData.levels[testData.stage];
-	
-	// Set the background
-        $("body").attr("style", "background-image: url('" + defense.background + 
-	    "'); background-size:cover; background-position: center center; " +
-	    "background-attachment: fixed; background-repeat:no-repeat");
-	
-	// Set the defender stage title
-	document.getElementById("defenderLink").innerHTML = defense.title;
-	$("[id^=stage").attr("id", "stage." + defense.id );
-
-	// Set the attacker stage title
-	let attack  = testData.scenarios[testData.stage];
-	document.getElementById("attackerLink").innerHTML = attack.title;
-	$("[id^=scenario").attr("id", "scenario." + attack.id);
     }
+
+    // Read MItre Att&ck data, TODO handle failures
+    mitreAttack = $.ajax({
+	url: "MitreAttack.json",
+	async: false,
+    }).responseJSON;
 
     // Read game data, TODO handle failures
     testData = $.ajax({
@@ -272,37 +224,27 @@ let handleAttackChange = (event) => {
 	async: false,
     }).responseJSON;
 
-    // Top card shows operational status
-    createStatusCard();
-    
     let subBody = $(document.createElement('div'))
 	.attr("class", "container col-12");
-    $("body").append(subBody);
+    $("#gameboard").append(subBody);
 
     let row = $(document.createElement('div'))
 	.attr("class", "row");
     subBody.append(row);
     
-    let defendArea = $(document.createElement('div'))
-	.attr("class", "col-6")
-	.attr( "id", "defendArea");
-    row.append(defendArea);
-    let attackArea = $(document.createElement('div'))
-	.attr("class", "col-6")
-	.attr( "id", "attackArea");
-    row.append(attackArea);
+    row.append('<div class="col-6 d-flex flex-column"><div id="mitigationArea" class="row"></div></div>');
+    row.append('<div class="col-6 d-flex flex-column"><div id="defendArea" class="row" ondrop="dragDrop(event)" ondragover="allowDrop(event)"></div></div>');
     
-    createDefenderArea(defendArea);
-    createAttackerArea(attackArea);
-//    subBody.append('<a href="#resultModal" data-toggle="modal"></a>');
+    mitreAttack.mitigations.forEach(element => createMitigationCard(jQuery('#mitigationArea'), element ));
 
     setStage();
 
-
-/*
-   
-
-(function rideScopeWrapper($) {
+(function gameScopeWrapper($) {
+    // Bypass auth if running from a local server
+    if (location.hostname === "localhost" || location.hostname === "127.0.0.1")
+	//TODO need code to get json data locally
+	return;
+	
     var authToken;
     Wlowi.authToken.then(function setAuthToken(token) {
         if (token) {
@@ -317,7 +259,7 @@ let handleAttackChange = (event) => {
     function requestGame(pickupLocation) {
         $.ajax({
             method: 'POST',
-            url: _config.api.invokeUrl + '/ride',
+            url: _config.api.invokeUrl + '/game',
             headers: {
                 Authorization: authToken
             },
@@ -330,7 +272,7 @@ let handleAttackChange = (event) => {
             contentType: 'application/json',
             success: completeRequest,
             error: function ajaxError(jqXHR, textStatus, errorThrown) {
-                console.error('Error requesting ride: ', textStatus, ', Details: ', errorThrown);
+                console.error('Error requesting game: ', textStatus, ', Details: ', errorThrown);
                 console.error('Response: ', jqXHR.responseText);
                 alert('An error occured when requesting your game:\n' + jqXHR.responseText);
             }
@@ -381,5 +323,3 @@ let handleAttackChange = (event) => {
     }
 
 }(jQuery));
-
-*/

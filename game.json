@@ -20,7 +20,7 @@
 				"html": "You likely only have only a single server. You were right to focus your resouces on protecting the server.  When you are starting out, "
 			},
 			"html": "TODO context story D1", 
-			"background": "images/me-myself-and-i.jpg"
+			"background": "img/me-myself-and-i.jpg"
 		},
 		{ 
 			"id": "D2",
@@ -32,7 +32,7 @@
 				"html": "TODO."
 			},
 			"html": "TODO context story D2", 
-			"background": "images/real-customers.jpg"
+			"background": "img/real-customers.jpg"
 		},
 		{ 
 			"id": "D3",
@@ -44,7 +44,7 @@
 				"html": "TODO."
 			},
 			"html": "TODO context story", 
-			"background": "images/ipo.jpg" },
+			"background": "img/ipo.jpg" },
 		{ 
 			"id": "D4",
 			"title": "Fortune 500", 
@@ -55,7 +55,7 @@
 				"html": "TODO."
 			},
 			"html": "TODO context story", 
-			"background": "images/fortune500.jpg" },
+			"background": "img/fortune500.jpg" },
 		{ 
 			"id": "D5",
 			"title": "Defense Contractor",
@@ -66,7 +66,7 @@
 				"html": "TODO."
 			},
 			"html": "TODO context story", 
-			"background": "images/defense-contractor.jpg" },
+			"background": "img/defense-contractor.jpg" },
 		{ 
 			"id": "D6",
 			"title": "Pentagon",
@@ -77,7 +77,7 @@
 				"html": "TODO."
 			},
 			"html": "TODO context story",
-			"background": "images/pentagon.jpg" }
+			"background": "img/pentagon.jpg" }
 	],
 	"scenarios": [
 		{
