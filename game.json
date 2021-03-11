@@ -2,487 +2,297 @@
 	"id": "Wlowi",
 	"email": "bob@test.com",
 	"name": "Bob",
-	"budget": 4,
-	"status": "clear",
+	"budget": 0,
 	"html": "Instruction of games starting modal TODO",
-	"stage": 0,
-	"currentPhase": 0,
-	"attackPhases": ["compromises", "escalations", "persistences", "exfils"],
-
+	"level": 0,
+	"attackStatus": 0,
+	"attackPhases": ["compromises", "escalations", "exfils"],
 	"levels": [
-		{ 
-			"id": "D1",
-			"title": "Me, myself, and I",
-			"completionBonus": 4, 
-			"injects": 0,
-			"result": { 
-				"title": "Success",
-				"html": "You likely only have only a single server. You were right to focus your resouces on protecting the server.  When you are starting out, "
-			},
-			"html": "TODO context story D1", 
-			"background": "img/me-myself-and-i.jpg"
-		},
-		{ 
-			"id": "D2",
-			"title": "Real customers", 
-			"completionBonus": 2, 
-			"injects": 2,
-			"result": { 
-				"title": "Success",
-				"html": "TODO."
-			},
-			"html": "TODO context story D2", 
-			"background": "img/real-customers.jpg"
-		},
-		{ 
-			"id": "D3",
-			"title": "IPO", 
-			"completionBonus": 2, 
-			"injects": 3,
-			"result": { 
-				"title": "Success",
-				"html": "TODO."
-			},
-			"html": "TODO context story", 
-			"background": "img/ipo.jpg" },
-		{ 
-			"id": "D4",
-			"title": "Fortune 500", 
-			"completionBonus": 2, 
-			"injects": 4,
-			"result": { 
-				"title": "Success",
-				"html": "TODO."
-			},
-			"html": "TODO context story", 
-			"background": "img/fortune500.jpg" },
-		{ 
-			"id": "D5",
-			"title": "Defense Contractor",
-			"completionBonus": 2, 
-			"injects": 5,
-			"result": { 
-				"title": "Success",
-				"html": "TODO."
-			},
-			"html": "TODO context story", 
-			"background": "img/defense-contractor.jpg" },
-		{ 
-			"id": "D6",
-			"title": "Pentagon",
-			"completionBonus": 2,
-			"injects": 6,
-			"result": { 
-				"title": "Success",
-				"html": "TODO."
-			},
-			"html": "TODO context story",
-			"background": "img/pentagon.jpg" }
-	],
-	"scenarios": [
 		{
-			"id": "S1",
-			"title": "Script Kiddies",
-			"result": { 
-				"title": "Failure",
-				"html": "TODO."
-			},
-			"html": "TODO context story S1", 
-			"compromises": ["WSC"],
-			"escalations": ["IPS"],
-			"persistences": ["NUA"],
-			"exfils": ["TLS"]
+			"title": "Script Kiddies vs. Me, myself, and I",
+			"levelBudget": 4, 
+			"successModalHtml": "todo",
+			"failureModalHtml": "todo",
+			"compromises": ["T1133","T1566"],
+			"escalations": ["T1059","T1078"],
+			"exfils": ["T1537"],
+			"bypasses": [],
+			"numberOfInjects": 0,
+			"background": "../img/me-myself-and-i.jpg"
 		},
 		{
-			"id": "S2",
-			"title": "Hacktivists",
-			"result": { 
-				"title": "Failure",
-				"html": "TODO."
-			},
-			"html": "TODO context story S2", 
-			"compromises": ["WSC"],
-			"escalations": ["IPS"],
-			"persistences": ["NUA"],
-			"exfils": ["TLS"]
+			"title": "Insider Threats vs. Real customers",
+			"levelBudget": 6, 
+			"successModalHtml": "todo",
+			"failureModalHtml": "todo",
+			"compromises": ["T1133"],
+			"escalations": ["T1133"],
+			"exfils": ["T1133"],
+			"bypasses": [],
+			"numberOfInjects": 0,
+			"background": "../img/real-customers.jpg"
 		},
 		{
-			"id": "S3",
-			"title": "Insider Threats",
-			"result": { 
-				"title": "Failure",
-				"html": "TODO."
-			},
-			"html": "TODO context story S3", 
-			"compromises": ["WSC"],
-			"escalations": ["IPS"],
-			"persistences": ["NUA"],
-			"exfils": ["TLS"]
+			"title": "Hacktivists vs. IPO",
+			"levelBudget": 6, 
+			"successModalHtml": "todo",
+			"failureModalHtml": "todo",
+			"compromises": ["T1133"],
+			"escalations": ["T1133"],
+			"exfils": ["T1133"],
+			"bypasses": [],
+			"numberOfInjects": 0,
+			"background": "../img/ipo.jpg"
 		},
 		{
-			"id": "S4",
-			"title": "Cyber Criminals",
-			"result": { 
-				"title": "Failure",
-				"html": "TODO."
-			},
-			"html": "TODO context story S4", 
-			"compromises": ["WSC"],
-			"escalations": ["IPS"],
-			"persistences": ["NUA"],
-			"exfils": ["TLS"]
+			"title": "Cyber Criminals vs. Fortune 500",
+			"levelBudget": 6, 
+			"successModalHtml": "todo",
+			"failureModalHtml": "todo",
+			"compromises": ["T1133"],
+			"escalations": ["T1133"],
+			"exfils": ["T1133"],
+			"bypasses": [],
+			"numberOfInjects": 0,
+			"background": "../img/fortune500.jpg"
 		},
 		{
-			"id": "S5",
-			"title": "Espionage",
-			"result": { 
-				"title": "Failure",
-				"html": "TODO."
-			},
-			"html": "TODO context story S5", 
-			"compromises": ["WSC"],
-			"escalations": ["IPS"],
-			"persistences": ["NUA"],
-			"exfils": ["TLS"]
+			"title": "Espionage vs. Defense Contractor",
+			"levelBudget": 6, 
+			"successModalHtml": "todo",
+			"failureModalHtml": "todo",
+			"compromises": ["T1133"],
+			"escalations": ["T1133"],
+			"exfils": ["T1133"],
+			"bypasses": [],
+			"numberOfInjects": 0,
+			"background": "../img/defense-contractor.jpg"
 		},
 		{
-			"id": "S6",
-			"title": "Nation States",
-			"result": { 
-				"title": "Failure",
-				"html": "TODO."
-			},
-			"html": "TODO context story S6", 
-			"compromises": [""],
-			"escalations": ["IPS"],
-			"persistences": ["NUA"],
-			"exfils": ["TLS"]
+			"title": "Nation States vs. The Pentagon",
+			"levelBudget": 6, 
+			"successModalHtml": "todo",
+			"failureModalHtml": "todo",
+			"compromises": ["T1133"],
+			"escalations": ["T1133"],
+			"exfils": ["T1133"],
+			"bypasses": [],
+			"numberOfInjects": 0,
+			"background": "../img/pentagon.jpg"
 		}
 	],
 	"injects": [
-		{
-			"id": "SCI",
-			"title": "Supply Chain Inject",
-			"result": { 
-				"title": "Failure",
-				"html": "TODO."
-			},
-			"action": [ "bypass firewalls"],
-			"html": "URL, write up, etc. TODO",
-			"budget": 4
-		},
-		{
-			"id": "WHA",
-			"title": "Waterhole attack",
-			"action": [ "bypass firewalls"],
-			"result": { 
-				"title": "Failure",
-				"html": "TODO."
-			},
-			"html": "URL, write up, etc. TODO",
-			"budget": 1
-		},
-		{
-			"id": "SCI",
-			"title": "Supply Chain Inject",
-			"action": [ "bypass firewalls"],
-			"result": { 
-				"title": "Failure",
-				"html": "TODO."
-			},
-			"html": "URL, write up, etc. TODO",
-			"budget": 1
-		}
-	],
-	"compromises": [
-		{
-			"id": "WSC",
-			"title": "Web Server Compromise",
-			"detections": [ "SA"],
-			"tools": [],
-			"html": "Attackers leverage a vulnerable external web server to pivot in the internal network.",
-			"url": "tbd"
-		},
-		{
-			"id": "IPS",
-			"title": "Internal Password Spray",
-			"detections": ["UB", "SL"],
-			"tools": ["domain password spray"],
-			"html": "Sometimes attackers have list or can guess a range or pattern of usernames.  Think employee id or first.last@mymail.org.  Given a list of potentials usernames password spraying will try a good guess 'Spring21' ofr every username.  Hoping for a few hits.",
-			"url": "tbd"
-		},
-		{
-			"id": "PSH",
-			"title": "",
-			"detections": [],
-			"tools": [],
-			"html": "",
-			"url": "tbd"
-		}
-	],
-	"escalations": [
-		{
-			"id": "IPS",
-			"title": "Internal Password Spray",
-			"detections": ["UB", "SL"],
-			"tools": [
-				{ "name": "Domain password spray", "url": "https://github.com/dafthack/DomainPasswordSpray" }
-				],
-			"html": "Sometimes attackers have list or can guess a range or pattern of usernames.  Think employee id or first.last@mymail.org.  Given a list of potentials usernames password spraying will try a good guess 'Spring21' ofr every username.  Hoping for a few hits.",
-			"url": "tbd"
-		},
-		{
-			"id": "WAD",
-			"title": "Weaponize Active Directory",
-			"detections": ["UB","NI"],
-			"tools": [
-				{ "name": "BloodHound", "url": "https://github.com/BloodHoundAD/BloodHound" },
-				{ "name": "DeathStar", "url": "https://github.com/byt3bl33d3r/DeathStar" },
-				{ "name": "CrackMapExec", "url": "https://github.com/byt3bl33d3r/CrackMapExec" }
-				],
-			"html": "In most enterprises Active directory is the primary repository of user permissions, group mappings, and IAM policy",
-			"url": "tbd"
-		},
-		{
-			"id": "BP",
-			"title": "Broadcast Posioning",
-			"detections": ["FW", "UB"],
-			"tools": [
-				{ "name": "Responder", "url": "https://github.com/SpiderLabs/Responder" }
-				],
-			"html": "Attacks using broadcast|multicast protocols can poison queries on your local area network.  Allowing for service and name discovery.",
-			"url": "tbd"
-			
-		},
-		{
-			"id": "",
-			"title": "",
-			"detections": [],
-			"tools": [
-				{ "name": "", "url": "" },
-				{ "name": "", "url": "" },
-				{ "name": "", "url": "" }
-				],
-			"html": "",
-			"url": "tbd"
-		},
-		{
-			"id": "",
-			"title": "",
-			"detections": [],
-			"tools": [
-				{ "name": "", "url": "" },
-				{ "name": "", "url": "" },
-				{ "name": "", "url": "" }
-				],
-			"html": "",
-			"url": "tbd"
-		},
-		{
-			"id": "",
-			"title": "",
-			"detections": [],
-			"tools": [
-				{ "name": "", "url": "" },
-				{ "name": "", "url": "" },
-				{ "name": "", "url": "" }
-				],
-			"html": "",
-			"url": "tbd"
-		},
-		{
-			"id": "",
-			"title": "",
-			"detections": [],
-			"tools": [
-				{ "name": "", "url": "" },
-				{ "name": "", "url": "" },
-				{ "name": "", "url": "" }
-				],
-			"html": "",
-			"url": "tbd"
-		}
-		
-	],
-	"persistences": [
-		{
-			"id": "NUA",
-			"title": "New User added",
-			"detections": ["UB", "EP"],
-			"tools": [],
-			"html": "Adding a new user rarley draws attention because it doesn't intefere with existing user work.",
-			"url": "tbd"
-		}
-	],
-	"exfils": [
-		{
-			"id": "TLS",
-			"title": "HTTP(S) as Exfil",
-			"detections": ["FW", "NA", "SL"],
-			"tools": [],
-			"html": "Easy to implement, but also easy to track.  Excessive volumes, blacklist doamins, and servers initiating outbound HTTP connections will raise red flags.",
-			"url": "tbd"
-		}
-	],
-
-	"procedures": [
-		{
-			"id": "FW",
-			"title": "Firewalls",
-			"url": "https://www.liveaction.com/blog/monitor-network-traffic/",
-			"budget": 100,
-			"detect": false,
-			"prevent": false,
-			"html": "<div class='modal-title'>Definition</div>A firewall is a network security device that restricts network traffic based on a set of security rules.<br>Its purpose is to establish a barrier between your internal network and the Internet. <div class='modal-title'>Implementation</div>Your home router will provide basic firewall features.  The level of sophiscation grows with the organization.  ",
-			"tools": [
-				{ "name": "SOF-ELK" }
-				],
-			"requirements": []
-		},
-		{
-			"id": "NA",
-			"title": "Network Analysis",
-			"url": "https://",
-			"budget": 100,
-			"detect": false,
-			"prevent": false,
-			"html": "This procedure requires that you capture and review all network traffic.  Do you have the tools to analyze the traffic?  Is the process automated?",
-			"tools": [
-				{ "name": "SecurityOnion", "url": "" },
-				{ "name": "AI-Hunter", "url": "" }
-				],
-			"requirements": []
-		},
-		{
-			"id": "SL",
-			"title": "SIEM log analysis",
-			"url": "https://",
-			"budget": 100,
-			"detect": false,
-			"prevent": false,
-			"html": "",
-			"tools": [
-				{ "name": "", "url": "" }
-				],
-			"requirements": ["FW","NA","UB"]
-		},
-		{
-			"id": "NI",
-			"title": "Network Isolation",
-			"url": "https://",
-			"budget": 100,
-			"detect": false,
-			"prevent": false,
-			"html": "",
-			"tools": [
-				{ "name": "", "url": "" }
-				],
-			"requirements": []
-		},
-		{
-			"id": "EA",
-			"title": "Endpoint Analysis",
-			"url": "https://",
-			"budget": 100,
-			"detect": false,
-			"prevent": false,
-			"html": "",
-			"tools": [
-				{ "name": "", "url": "" }
-				],
-			"requirements": []
-		},
-		{
-			"id": "SA",
-			"title": "Server Analysis",
-			"url": "https://",
-			"budget": 100,
-			"detect": false,
-			"prevent": false,
-			"html": "",
-			"tools": [
-				{ "name": "", "url": "" }
-				],
-			"requirements": []
-		},
-		{
-			"id": "EP",
-			"title": "Endpoint Protection",
-			"url": "https://www.crowdstrike.com/epp-101/what-is-endpoint-detection-and-response-edr/",
-			"budget": 100,
-			"detect": false,
-			"prevent": false,
-			"html": "",
-			"tools": [
-				{ "name": "", "url": "" }
-				],
-			"requirements": []
-		},
-		{
-			"id": "DI",
-			"title": "Device Isolation",
-			"url": "https://",
-			"budget": 100,
-			"detect": false,
-			"prevent": false,
-			"html": "",
-			"tools": [
-				{ "name": "", "url": "" }
-				],
-			"requirements": []
-		},
-		{
-			"id": "OC",
-			"title": "Organizational Controls",
-			"url": "https://",
-			"budget": 100,
-			"detect": false,
-			"prevent": false,
-			"html": "",
-			"tools": [
-				{ "name": "", "url": "" }
-				],
-			"requirements": []
-		},
-		{
-			"id": "UB",
-			"title": "User Behavior Analysis",
-			"url": "https://",
-			"budget": 100,
-			"detect": false,
-			"prevent": false,
-			"html": "",
-			"tools": [
-				{ "name": "", "url": "" }
-				],
-			"requirements": []
-		},
-		{
-			"id": "PC",
-			"title": "People Controls",
-			"url": "https://",
-			"budget": 100,
-			"detect": false,
-			"prevent": false,
-			"html": "",
-			"tools": [
-				{ "name": "", "url": "" }
-				],
-			"requirements": []
-		},
-		{
-			"id": "PY",
-			"title": "Physical",
-			"url": "https://",
-			"budget": 100,
-			"detect": false,
-			"prevent": false,
-			"html": "",
-			"tools": [
-				{ "name": "", "url": "" }
-				],
-			"requirements": []
-		}
-	]  
- 
+	    {
+		"color": "black",
+		"title": "CERT engaged",
+		"compromise": "1",
+		"cost": "-4",
+		"html": "A Computer Emergency Response team (CERT) is engaged to address current incident."
+	    },
+	    {
+		"color": "white",
+		"title": "New CISO",
+		"cost": "2",
+		"html": "The newly hired CISO provides insights into current attacks.  The saving budget to address likely attacks."
+	    },
+	    {
+		"color": "yellow",
+		"title": "Failed Corticate",
+		"cost": "-2",
+		"html": "You need to redo a failed certification."
+	    },
+	    {
+		"color": "blue",
+		"title": "New Lead Infosec Analyst",
+		"cost": "1",
+		"html": "You have hired an amazing Lead Infosec Analyst. Their ability to quickly get to root cause will cut remediation times in half."
+	    },
+	    {
+		"color": "red",
+		"title": "Hacktivists",
+		"cost": "-3",
+		"html": "Hacktivists are assaulting your social media accounts.  You need to divert resources to monitor 3rd party services."
+	    },
+	    {
+		"color": "blue",
+		"title": "IT Security consultant",
+		"cost": "2",
+		"html": "The IT security consultant recommends new additional mitigations from new vendors to improve operational efficiency."
+	    },
+	    {
+		"color": "blue",
+		"title": "IT Security Engineer",
+		"cost": "-1",
+		"html": "The new IT security engineer fat fingers the security dashboard and shuts down your firewall's key security services."
+	    },
+	    {
+		"color": "Red",
+		"title": "Penetration Tester",
+		"cost": "-2",
+		"html": "A rouge pen tester has posted vulnerabilities on social networks.  You need to remediate the issues now."
+	    },
+	    {
+		"color": "green",
+		"title": "Penetration Tester",
+		"cost": "2",
+		"html": "A responsible disclosure pen tester has found a few vulnerabilities in your system.  The savings on discovery will help fund remediations."
+	    },
+	    {
+		"color": "green",
+		"title": "Bug bounty Offered",
+		"cost": "1",
+		"html": "You enroll in a bug bounty program, saving budget on penetration testing."
+	    },
+	    {
+		"color": "blue",
+		"title": "Security Administrator",
+		"cost": "1",
+		"html": "Your security administrator quickly reacts to an alert in the SOC saving remediation costs."
+	    },
+	    {
+		"color": "red",
+		"title": "Malicious App",
+		"compromise": "bypass",
+		"cost": "-2",
+		"html": "Your sales teams has deployed a mobile app that is malicious and allowing attackers the opportunity to escalate."
+	    },
+	    {
+		"color": "black",
+		"title": "Outdated Policy",
+		"cost": "-1",
+		"html": "Your policy is so outdated it is forcing poor decision by staff."
+	    },
+	    {
+		"color": "blue",
+		"title": "Scholarship for Service",
+		"cost": "1",
+		"html": "The press related to your interns being selected by the Cyber Corps program is helping recruiting."
+	    },
+	    {
+		"color": "yellow",
+		"title": "Missing Firewalls Rules",
+		"cost": "-2",
+		"html": "Your firewall has not been keeping up with rule updates."
+	    },
+	    {
+		"color": "green",
+		"title": "Budget Increase",
+		"cost": "1",
+		"html": "Your cost saving programs have netted your team a small budget increase."
+	    },
+	    {
+		"color": "green",
+		"title": "Budget Increase",
+		"cost": "2",
+		"html": "Management has growing concerns about hackers, and is prioritizing a bigger budget."
+	    },
+	    {
+		"color": "green",
+		"title": "Budget Increase",
+		"cost": "4",
+		"html": "Management has made security a priority and bumped your budget."
+	    },
+	    {
+		"color": "green",
+		"title": "Secure Coding Practices",
+		"cost": "1",
+		"html": "Secure coding practices are reducing the number of findings from pen testing."
+	    },
+	    {
+		"color": "red",
+		"title": "Website defacement",
+		"cost": "2",
+		"html": "Your CDN provider was compromised.   You need find a new provider."
+	    },
+	    {
+		"color": "blue",
+		"title": "CyberPatriot",
+		"cost": "1",
+		"html": "The PR from supporting the CyberPatriot program is helping with intern recruitment."
+	    },
+	    {
+		"color": "black",
+		"title": "Cyber Threat Analysis",
+		"cost": "1",
+		"html": "Cyber threat analysis matches real-world threat against your vulnerabilities.  Allowing budget for another mitigation."
+	    },
+	    {
+		"color": "black ",
+		"title": "Advanced Threat Monitoring",
+		"cost": "1",
+		"html": "Installing Advanced threat protection will  provide protection from endpoints against known malicious code, save on remediation costs."
+	    },
+	    {
+		"color": "blue",
+		"title": "Attend Security Conference",
+		"cost": "2",
+		"html": "Attending a security conference has allowed you hear about the most current attack techniques and mitigations."
+	    },
+	    {
+		"color": "red",
+		"title": "Budget Cut",
+		"cost": "-3",
+		"html": "Management has decided to reduce operational costs to prioritize growing the business.  The budget hit hurts."
+	    },
+	    {
+		"color": "blue",
+		"title": "Information Sharing",
+		"cost": "3",
+		"html": "You join a group of fellow CISOs to share your experiences and best practices.  The long term vision is very helpful with mitigation deployments."
+	    },
+	    {
+		"color": "blue",
+		"title": "Security Group Membership",
+		"cost": "1",
+		"html": "You join a security group to share your experiences and best practices.  Saving budget on deployment costs."
+	    },
+	    {
+		"color": "yellow",
+		"title": "Privacy Violation",
+		"cost": "-1",
+		"html": "An audit of your companies privacy policy has revealed shortcomings in your implementation."
+	    },
+	    {
+		"color": "yellow",
+		"title": "Threat Analysis",
+		"cost": "-1",
+		"html": "An audit of your companies security control has revealed shortcomings in your implementation."
+	    },
+	    {
+		"color": "yellow",
+		"title": "Unscheduled Maintenance",
+		"cost": "-1",
+		"html": "Unscheduled maintenance in the SOC is diverting resources."
+	    },
+	    {
+		"color": "yellow",
+		"title": "Anti-Malware Not Updated",
+		"cost": "-1",
+		"html": "Your team has not been keeping up with updates.  You incur extra expenses to catch up now."
+	    },
+	    {
+		"color": "blue",
+		"title": "Security Training",
+		"cost": "1",
+		"html": "Your risk team attends training and you able to improve your controls."
+	    },
+	    {
+		"color": "red",
+		"title": "Key Disclosure",
+		"cost": "-1",
+		"html": "An admin has posted a server key in a public repo, you need to rotate the key on the servers now."
+	    },
+	    {
+		"color": "yellow",
+		"title": "OS not Patched",
+		"cost": "-1",
+		"html": "Your team has not been keeping up with updates.  You incur extra expenses to automated the process."
+	    },
+	    {
+		"color": "yellow",
+		"title": "Hardware failure",
+		"cost": "-2",
+		"html": "A firewall has failed and others are past end of life.  Time to replace the hardware."
+	    }
+	]
 }

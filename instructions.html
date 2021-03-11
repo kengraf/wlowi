@@ -20,7 +20,7 @@
           <div class="collapse navbar-collapse" id="navbarContent">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item"><a class="nav-link" href="#">Donate</a></li>
-              <li class="nav-item"><a class="nav-link active" href="game.html">Game</a></li>
+              <li class="nav-item"><a class="nav-link" href="game.html">Game</a></li>
               <li class="nav-item"><a class="nav-link" href="register.html">Register</a></li>
               <li class="nav-item"><a class="nav-link" href="signin">Sign-in</a></li>
             </ul>
@@ -34,20 +34,65 @@
       <div class="site-bg-img d-flex align-items-center">
         <div class="container">
           <div class="row no-gutters">
-            <div class="col-md-10 col-lg-6 text-center text-md-left margins">
+            <div class="col text-center text-md-left margins">
               <div class="white-text">
                 <div class="wow fadeInLeft" data-wow-delay="0.3s">
                   <div class="container">
                     <div class="wow fadeIn">
                       <h2 class="h1 text-white pt-5 pb-3 text-center">Instructions</h2>
                     </div>
-                    <div class="faq-list container wow fadeInUp" data-wow-delay=".4s">
-                      <div class="row">
-                        <div class="col text-left">
-                          <p>TODO</p>
-                        </div>
-                      </div>
+                    <button class="collapsible">Goal</button>
+                    <div class="content">
+                    <br>You win by successfully defending against every type of attacker (Script Kiddies to Nation states). <br> 
+                    You lose if: 1) You run out of budget to to maintain your operations.  2) If your data 
+                    is ex-filtrated to tht public.
+                    <br><br>
                     </div>
+                    <br>
+                    <button class="collapsible">Initial Setup</button>
+                    <div class="content">
+                     <br>You are given a budget and access to a subset of mitigations.
+                     Drag the mitigations you want to activate into the deploy area.
+                     Each activitation will reduce your budget.
+                     When you are ready, click the "RUN" button.  This will start the attack.
+                    </div><br>
+                    
+                    <button class="collapsible">Game play</button>
+                    <div class="content">
+                     <br>Once the attack has begun the scenario will show a series of attack, failure, and inject cards.
+                     Each level has a core set of defined cards as well as radomaly generated cards.
+                     The number of cards increases with each level.
+                    </div><br>
+                    
+                    <button class="collapsible">Responding to attack and inject cards</button>
+                    <div class="content">
+                     <br><ul>
+                     <li>Attack Cards:  If you deployed an effective mitigation these cards are benign and are ignored.  Good job!
+                     If not, you will given the chance to remediate at a cost. If you choose to ignore the expose will continue.<br>
+                     <li>Failure Cards:  This is an attack that just always works, even if you have the right mitigation deployed.  
+                     Real-life example: you did phishing training but somebody clicked on that email anyway.<br>
+                     <li>Inject cards:  These can be good, bad, or indifferent.  Respond or ignore as you see fit.
+                     </ul>
+                    </div><br>
+                    
+                    <script>
+                    var coll = document.getElementsByClassName("collapsible");
+                    var i;
+                    
+                    for (i = 0; i < coll.length; i++) {
+                      coll[i].addEventListener("click", function() {
+                        this.classList.toggle("active");
+                        var content = this.nextElementSibling;
+                        if (content.style.maxHeight){
+                          content.style.maxHeight = null;
+                        } else {
+                          content.style.maxHeight = content.scrollHeight + "px";
+                        } 
+                      });
+                    }
+                    </script>
+                    
+                   
                   </div>
                 </div>
               </div>

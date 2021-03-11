@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+
+
+
 <html lang="en-US">
   <head>
     <meta charset="UTF-8">
@@ -9,18 +12,19 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="css/bootstrap.min.css?ver=1.1.0" rel="stylesheet">
     <link href="css/mdb.min.css?ver=1.1.0" rel="stylesheet">
-    <link href="css/wlowi.css?ver=1.1.0" rel="stylesheet">
+    <link href="css/wlowi.css" rel="stylesheet">
+
   </head>
   <body id="top">
     <header>
       <!-- Navbar-->
       <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar" id="navbar">
-        <div class="container"><a class="navbar-brand" href="#"><img style="width:30px;margin-right:3px" src="img/eagle-logo-white.png"><strong>Wlowi</strong></a>
+        <div class="container"><a class="navbar-brand" href="/index.html"><img style="width:30px;margin-right:3px" src="img/eagle-logo-white.png"><strong>Wlowi</strong></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
           <div class="collapse navbar-collapse" id="navbarContent">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item"><a class="nav-link" href="#">Donate</a></li>
-              <li class="nav-item"><a class="nav-link active" href="game.html">Game</a></li>
+              <li class="nav-item"><a class="nav-link" href="game.html">Game</a></li>
               <li class="nav-item"><a class="nav-link" href="register.html">Register</a></li>
               <li class="nav-item"><a class="nav-link" href="signin">Sign-in</a></li>
             </ul>
@@ -34,16 +38,83 @@
       <div class="site-bg-img d-flex align-items-center">
         <div class="container">
           <div class="row no-gutters">
-            <div class="col-md-10 col-lg-6 text-center text-md-left margins">
+            <div class="col text-center text-md-left margins">
               <div class="white-text">
                 <div class="wow fadeInLeft" data-wow-delay="0.3s">
                   <div class="container">
                     <div class="wow fadeIn">
                       <h2 class="h1 text-white pt-5 pb-3 text-center">Strategy</h2>
                     </div>
-                    <div class="col text-left">
-                      <p>TODO</p>
+                    <button class="collapsible">General</button>
+                    <div class="content">
+                    <br>This game has multiple levels that are progressively more challenging.  In each level you need
+                    to a set an initial defense and maximize enough budget to address any actions and/or compromises that
+                    occur during the attack phase.  As you progress through the levels your capability to
+                    deploy more types of mitigations (defenses) will increase.  The sophistication of your attackers will also increase.
+                    By the last level you will have available all of the mitigations defined in Mitre's Att&ck framework and your
+                    adversary will be using every technique in the their playbook.<br><br>
                     </div>
+                    <br>
+                    <button class="collapsible">Level 1: Script Kiddies vs. Me, Myself, and I</button>
+                    <div class="content">
+                     <br>  You have the next BIG IDEA and a very talented team of three (Me, Myself, and I).
+                     The bad news is budget is tight so you need to be smart about how you spend your resources.  
+                     The good news is your new and not a direct target for a serious attack.
+                     However, the world is full wanttabe hackers (Script Kiddies) playing with Metasploit, scanning IPv4 addresses, 
+                     and spamming new domain admins.  You likely only have only a single server. 
+                     Focus your resources on protecting that server and try not to click on anything stupid.</div>
+                    <button class="collapsible">Level 2: Insider Threats vs. Real customers</button>
+                    <div class="content">
+                     <br> Of course your Mom and your dog Spot think anything you do is wonderful.
+                     But now you have real customers paying cash money!
+                     Cool, you are not the next Jeff Bezos yet, but cash and PII (credit cards) are coming in.
+                     You have hired a small but talented team, and there might one or two that think they are smarter than you!
+                     The attacks will not be overly sophisticated, but fundamental control of user access to resource is key. </div>
+                    <button class="collapsible">Level 3: Hacktivists vs. IPO</button>
+                    <div class="content">
+                     <br>With money rolling in so is the attention.
+                     There are few groups that are not happy with your innovation. Taking you down before you to big for your britches is for Hacktivists.
+                     By in large Hacktivists are mostly interested in disruption.  They can be very effective at using existing toolsets.
+                     If they get to your customer data they will become a PR nightmare and scuttle your IPO.</div>
+                    <button class="collapsible">Level 4: Cyber Criminals vs. Fortune 500</button>
+                    <div class="content">
+                    <br>Congrats, you're publicly traded!  As CEO you have your eye on joining the cool kids club "The Fortune 500".
+                    With growth comes pain. You have managers managing managers.  You don't know everyone.  The need for policy, controls,
+                    and compliance audits are now a higher priority.
+                    You are big enough that curtain attackers will see value in trying to monetize your customer data, intellectual property, or both.
+                    The attackers look to compromise then escalate enough to control and/or exfiltrate your data.
+                    Ransomware, extortion, resale.  Remember, cyber criminals are really only motivated by money.<br>
+                    </div>
+                    <button class="collapsible">Level 5: Espionage vs. Defense Contractor</button>
+                    <div class="content">
+                     <br>Your hot new AI innovations mean a big contract to the DoD.  It is a cut-throat business and "others" whether inside
+                     or outside the country are willing to be creative to "acquire" what you have.  Adversaries have very aggressive playbooks that 
+                     would make a Hollywood producer jealous.</div>
+                    <button class="collapsible">Level 6: Nation States vs. The Pentagon</button>
+                    <div class="content">
+                    <br>The final round.  Mano-a-mano.  The adversaries have a full playbook, people, time, and money.  Hopefully you have
+                    been smart in the previous rounds.  You will all the resources you can muster,
+                    because people are coming after you and they don't play fair.<br><br>
+                    </div>
+                    
+                    <script>
+                    var coll = document.getElementsByClassName("collapsible");
+                    var i;
+                    
+                    for (i = 0; i < coll.length; i++) {
+                      coll[i].addEventListener("click", function() {
+                        this.classList.toggle("active");
+                        var content = this.nextElementSibling;
+                        if (content.style.maxHeight){
+                          content.style.maxHeight = null;
+                        } else {
+                          content.style.maxHeight = content.scrollHeight + "px";
+                        } 
+                      });
+                    }
+                    </script>
+                    
+                   
                   </div>
                 </div>
               </div>

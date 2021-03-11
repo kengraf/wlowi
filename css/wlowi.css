@@ -39,7 +39,7 @@ html {
 
 #game {
   background: url("../img/me-myself-and-i.jpg") no-repeat center center;
-  background-size: cover; }
+}
 
 .cardBtn {
   background-color: #303fa0;
@@ -73,12 +73,53 @@ html {
 }
 
 #defendArea {
-  border: 1px solid white;
+  border: 2px solid white;
   margin: 1px;
-  min-height: 800px;
+  min-height: 400px;
+  padding: 20px; 
+  resize: both;
+  overflow: auto;
 }
 
 #attackArea {
   border: 2px solid red;
   margin: 2px;
 }
+
+.collapsible {
+  background-color: #3949ab !important;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 20px;
+}
+
+.active, .collapsible:hover {
+  background-color: #3949ab !important;
+  border: none;
+}
+
+.collapsible:after {
+  content: '\002B';
+  color: white;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+}
+
+.content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #3949ab !important;
+}
+

@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="css/bootstrap.min.css?ver=1.1.0" rel="stylesheet">
     <link href="css/wlowi.css?ver=1.1.0" rel="stylesheet">
+
   </head>
   <body id="top">
     <header>
@@ -21,11 +22,10 @@
             <span class="navbar-toggler-icon"></span></button>
           <div class="collapse navbar-collapse" id="navbarContent">
             <ul class="navbar-nav ml-auto">
-              <li class="nav-item"><button id="runDefense" class="runBtn" onclick="runDefense()">
-                  todo</button></li>
               <li class="nav-item"><a class="nav-link" href="instructions.html">Instructions</a></li>
               <li class="nav-item"><a class="nav-link" href="strategy.html">Strategy</a></li>
-              <li class="nav-item"><a class="nav-link" onclick="saveGame()">Save Game</a></li>
+              <li class="nav-item"><a class="nav-link" onclick="loadGameModal()">LoadGame</a></li>
+              <li class="nav-item"><a class="nav-link" onclick="saveGameModal()">SaveGame</a></li>
             </ul>
           </div>
         </div>
@@ -35,20 +35,41 @@
 
     <section class="view hm-gradient" id="game">
       <div class="site-bg-img d-flex align-items-center">
-        <div class="container" id="gameboard">
+        <div class="container">
           <div class="row no-gutters">
-<!-- Bulk of body generated programmatically in js/game.js -->
+            <div class="col d-flex flex-column">
+              <div id="runDefense" class="center">
+              </div>
+            </div>
+          </div>
+          <div class="row no-gutters">
+            <div class="col d-flex flex-column">
+              <div id="alertSpace"></div>
+            </div>
+          </div>
+          <div class="row no-gutters">
+            <div class="container col-12">
+              <div class="row">
+                <div class="col-6 d-flex flex-column">
+                  <div id="mitigationArea" class="row"></div>
+                </div>
+                <div class="col-6 d-flex flex-column">
+                  <div id="defendArea" class="row" ondrop="dragDrop(event)" ondragover="allowDrop(event)"></div>
+                </div>
+      <!-- Bulk of body generated programmatically by game.js -->
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
 <!-- Modal for information -->
-<div class="modal fade" id="cardModal" tabindex="-1" role="dialog" aria-labelledby="cardModalLabel" aria-hidden="true">
+<div class="modal fade" id="cardModal" data-damage="0" tabindex="-1" role="dialog" aria-labelledby="cardModalHeader" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title" id="cardModalLabel"></h4>
+        <h4 class="modal-title text-center" id="cardModalHeader"></h4>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -62,11 +83,12 @@
 </div>
 <!-- Modal for stage result -->
 
-
     <script type="text/javascript" src="scripts/jquery.min.js?ver=1.1.0"></script>
     <script type="text/javascript" src="scripts/popper.min.js?ver=1.1.0"></script>
     <script type="text/javascript" src="scripts/bootstrap.min.js?ver=1.1.0"></script>
     <script type="text/javascript" src="scripts/wow.min.js?ver=1.1.0"></script>
+
+
 <script>new WOW().init();</script>
 
     
