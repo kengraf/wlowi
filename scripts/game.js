@@ -99,7 +99,7 @@ function loadGame () {
     }).responseJSON;
 }
 
-function saveGame () {
+function TODOsaveGame () {
     // Save button is rendered as a model
     var id = $('#cardModal #gameModalID').val().trim();
 
@@ -389,35 +389,34 @@ GD = $.ajax({
 // Setup the initial gameboard
 enterLevel();
 
-(function gameScopeWrapper($) {
-    // Bypass auth if running from a local server
-    if (location.hostname === "localhost" || location.hostname === "127.0.0.1")
-	return;
-
     var authToken;
-    Wlowi.authToken.then(function setAuthToken(token) {
-        if (token) {
-            authToken = token;
-        } else {
-            window.location.href = '/signin.html';
-        }
-    }).catch(function handleTokenError(error) {
-        alert(error);
-        window.location.href = '/signin.html';
-    });
-    function requestGame(pickupLocation) {
+
+    // Bypass auth if running from a local server
+    if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {
+	;
+    } else {
+	Wlowi.authToken.then(function setAuthToken(token) {
+	    if (token) {
+		authToken = token;
+	    } else {
+		window.location.href = '/signin.html';
+	    }
+	}).catch(function handleTokenError(error) {
+	    alert(error);
+	    window.location.href = '/signin.html';
+	});
+    }
+    
+    function completeRequest() { }
+    
+    function saveGame() {
         $.ajax({
             method: 'POST',
-            url: _config.api.invokeUrl + '/game',
+            url: _config.api.invokeUrl + '/gameSave',
             headers: {
                 Authorization: authToken
             },
-            data: JSON.stringify({
-                PickupLocation: {
-                    Latitude: pickupLocation.latitude,
-                    Longitude: pickupLocation.longitude
-                }
-            }),
+            data: JSON.stringify(GD),
             contentType: 'application/json',
             success: completeRequest,
             error: function ajaxError(jqXHR, textStatus, errorThrown) {
@@ -428,47 +427,3 @@ enterLevel();
         });
     }
 
-    function completeRequest(result) {
-        var game;
-        var pronoun;
-        console.log('Response received from API: ', result);
-        game = result.Game;
-        pronoun = game.Gender === 'Male' ? 'his' : 'her';
-        displayUpdate(game.Name + ', your ' + game.Color + ' game, is on ' + pronoun + ' way.');
-
-    }
-
-    // Register click handler for #request button
-    $(function onDocReady() {
-        $('#request').click(handleRequestClick);
-
-        Wlowi.authToken.then(function updateAuthMessage(token) {
-            if (token) {
-                displayUpdate('You are authenticated. Click to see your <a href="#authTokenModal" data-toggle="modal">auth token</a>.');
-                $('.authToken').text(token);
-            }
-        });
-
-        if (!_config.api.invokeUrl) {
-            $('#noApiMessage').show();
-        }
-    });
-
-    function handlePickupChanged() {
-        var requestButton = $('#request');
-        requestButton.text('Request game');
-        requestButton.prop('disabled', false);
-    }
-
-    function handleRequestClick(event) {
-        var pickupLocation = "";
-        event.preventDefault();
-        requestGame(pickupLocation);
-    }
-
-
-    function displayUpdate(text) {
-        $('#updates').append($('<li>' + text + '</li>'));
-    }
-
-}(jQuery));

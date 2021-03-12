@@ -69,9 +69,6 @@ html {
   border-radius: 10px;
 }
 
-#mitigationArea {
-}
-
 #defendArea {
   border: 2px solid white;
   margin: 1px;
@@ -96,11 +93,6 @@ html {
   text-align: left;
   outline: none;
   font-size: 20px;
-}
-
-.active, .collapsible:hover {
-  background-color: #3949ab !important;
-  border: none;
 }
 
 .collapsible:after {
