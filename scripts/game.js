@@ -77,6 +77,13 @@ function runDefense () {
     }    
 }
 
+function handleEvent(e) {
+    alert( "Game request failed" );
+}
+
+function addListeners(xhr) {
+    xhr.addEventListener('error', handleEvent);
+}
 function loadGame () {
     // Load button is rendered as a modal
     var id = $('#cardModal #gameModalID').val().trim();
@@ -97,7 +104,8 @@ function saveGame () {
     var id = $('#cardModal #gameModalID').val().trim();
 
     var xhr = new XMLHttpRequest();
-    xhr.open("POST", location.hostname + '/saveGame?id=' + id, true);
+    addListeners(xhr);
+    xhr.open("POST", '/saveGame?id=' + id, true);
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.send(JSON.stringify(GD));
 }
