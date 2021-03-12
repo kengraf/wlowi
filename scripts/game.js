@@ -87,7 +87,7 @@ function addListeners(xhr) {
 function loadGame () {
     // Load button is rendered as a modal
     var id = $('#cardModal #gameModalID').val().trim();
-    var url = location.hostname + '/loadGame?id=' + id;
+    var url = location.hostname + '/prod/gameLoad?id=' + id;
     
     GD = $.ajax({
 	url: url,
@@ -412,7 +412,7 @@ enterLevel();
     function saveGame() {
         $.ajax({
             method: 'POST',
-            url: _config.api.invokeUrl + '/gameSave',
+            url: _config.api.invokeUrl + '/prod/gameSave',
             headers: {
                 Authorization: authToken
             },
