@@ -87,7 +87,7 @@ function addListeners(xhr) {
 function loadGame () {
     // Load button is rendered as a modal
     var id = $('#cardModal #gameModalID').val().trim();
-    var url = location.hostname + '/prod/gameLoad?id=' + id;
+    var url = _config.api.invokeUrl + '/gameLoad?id=' + id;
     
     GD = $.ajax({
 	url: url,
