@@ -411,7 +411,7 @@ enterLevel();
     
     function saveGame() {
         $.ajax({
-            method: 'POST',
+            method: 'PUT',
             url: _config.api.invokeUrl + 'gameSave',
             headers: {
                 Authorization: authToken
