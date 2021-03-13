@@ -5,6 +5,6 @@ window._config = {
         region: 'us-east-2'
     },
     api: {
-        invokeUrl: 'https://wlowi.cyber-unh.org/prod/'
+        invokeUrl: 'https://wlowi.cyber-unh.org/prod'
     }
 };
