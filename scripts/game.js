@@ -435,7 +435,7 @@ enterLevel();
             url: _config.api.invokeUrl + '/gamesave?id=' +id,
 	    crossOrigin: true,
             headers: {
-                'Referrer-Policy': 'no-referrer',
+                'Referrer': _config.api.invokeUrl,
 		'Authorization': authToken,
 		'Access-Control-Allow-Origin': '*'
             },
