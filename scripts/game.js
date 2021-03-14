@@ -434,7 +434,8 @@ enterLevel();
             method: 'GET',
             url: _config.api.invokeUrl + '/gameload?id=' +id,
             headers: {
-                Authorization: authToken
+                'Authorization': 'authToken',
+		'Access-Control-Allow-Origin': '*'
             },
             data: '',
             contentType: 'application/json',
