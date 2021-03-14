@@ -442,7 +442,7 @@ enterLevel();
 		GD = jqXHR.responseText();
 		$('#cardModal').modal('hide');
 		setStage();
-	    }
+	    },
             error: function ajaxError(jqXHR, textStatus, errorThrown) {
                 console.error('Error requesting game: ', textStatus, ', Details: ', errorThrown);
                 console.error('Response: ', jqXHR.responseText);
