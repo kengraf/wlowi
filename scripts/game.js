@@ -432,7 +432,7 @@ enterLevel();
         var id = $('#cardModal #gameModalID').val().trim();
 	$.ajax({
             method: 'POST',
-            url: _config.api.invokeUrl + '/gameload?id=' +id,
+            url: _config.api.invokeUrl + '/gamesave?id=' +id,
 	    crossOrigin: true,
             headers: {
                 'Authorization': authToken,
