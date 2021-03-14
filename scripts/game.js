@@ -410,9 +410,10 @@ enterLevel();
     function completeRequest() { }
     
     function saveGame() {
-        $.ajax({
-            method: 'POST',
-            url: _config.api.invokeUrl + '/gamesave',
+        var id = $('#cardModal #gameModalID').val().trim();
+       $.ajax({
+             method: 'POST',
+            url: _config.api.invokeUrl + '/gamesave?id=' +id,
             headers: {
                 Authorization: authToken
             },
