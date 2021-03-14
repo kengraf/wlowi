@@ -436,7 +436,7 @@ enterLevel();
             headers: {
                 Authorization: authToken
             },
-            data: JSON.stringify(GD),
+            data: '',
             contentType: 'application/json',
             success: function() {
 		GD = jqXHR.responseText();
