@@ -431,7 +431,7 @@ enterLevel();
     function loadGame() {
         var id = $('#cardModal #gameModalID').val().trim();
 	$.ajax({
-            method: 'GET',
+            method: 'POST',
             url: _config.api.invokeUrl + '/gameload?id=' +id,
 	    crossOrigin: true,
             headers: {
