@@ -433,7 +433,7 @@ enterLevel();
 	$.ajax({
             method: 'GET',
             url: _config.api.invokeUrl + '/gameload?id=' +id,
-	    crossDomain: true,
+	    crossOrigin: true,
             headers: {
                 'Authorization': authToken,
 		'Access-Control-Allow-Origin': '*'
