@@ -84,7 +84,7 @@ function handleEvent(e) {
 function addListeners(xhr) {
     xhr.addEventListener('error', handleEvent);
 }
-function loadGame () {
+function loadGameTODO () {
     // Load button is rendered as a modal
     var id = $('#cardModal #gameModalID').val().trim();
     var url = _config.api.invokeUrl + '/gameload?id=' + id;
@@ -407,8 +407,6 @@ enterLevel();
 	});
     }
     
-    function completeRequest() { }
-    
     function saveGame() {
         var id = $('#cardModal #gameModalID').val().trim();
        $.ajax({
@@ -419,7 +417,32 @@ enterLevel();
             },
             data: JSON.stringify(GD),
             contentType: 'application/json',
-            success: completeRequest,
+            success: function() {
+		$('#cardModal').modal('hide');
+	    },
+            error: function ajaxError(jqXHR, textStatus, errorThrown) {
+                console.error('Error requesting game: ', textStatus, ', Details: ', errorThrown);
+                console.error('Response: ', jqXHR.responseText);
+                alert('An error occured when requesting your game:\n' + jqXHR.responseText);
+            }
+        });
+    }
+
+    function loadGame() {
+        var id = $('#cardModal #gameModalID').val().trim();
+	$.ajax({
+            method: 'GET',
+            url: _config.api.invokeUrl + '/gameload?id=' +id,
+            headers: {
+                Authorization: authToken
+            },
+            data: JSON.stringify(GD),
+            contentType: 'application/json',
+            success: function() {
+		GD = jqXHR.responseText();
+		$('#cardModal').modal('hide');
+		setStage();
+	    }
             error: function ajaxError(jqXHR, textStatus, errorThrown) {
                 console.error('Error requesting game: ', textStatus, ', Details: ', errorThrown);
                 console.error('Response: ', jqXHR.responseText);
