@@ -411,7 +411,7 @@ enterLevel();
         var id = $('#cardModal #gameModalID').val().trim();
        $.ajax({
              method: 'POST',
-            url: _config.api.invokeUrl + '/gamesave?id=' +id,
+            url: _config.api.invokeUrl + 'gamesave?id=' +id,
             headers: {
                 Authorization: authToken
             },
@@ -432,7 +432,7 @@ enterLevel();
         var id = $('#cardModal #gameModalID').val().trim();
 	$.ajax({
             method: 'POST',
-            url: _config.api.invokeUrl + '/gamesave?id=' +id,
+            url: _config.api.invokeUrl + 'gamesave?id=' +id,
 	    crossOrigin: true,
             headers: {
                 'Referer': _config.api.invokeUrl,

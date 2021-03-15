@@ -5,6 +5,6 @@ window._config = {
         region: 'us-east-2'
     },
     api: {
-        invokeUrl: 'https://cctgmqw3c5.execute-api.us-east-2.amazonaws.com/prod'
+        invokeUrl: 'https://wlowiapi.cyber-unh.org/'
     }
 };
