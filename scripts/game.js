@@ -440,7 +440,7 @@ enterLevel();
             data: '',
             contentType: 'application/json',
             success: function(data) {
-		GD = JSON.parse(data);
+		GD = data.Game;
 		$('#cardModal').modal('hide');
 		enterLevel();
 	    },
