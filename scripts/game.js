@@ -410,7 +410,7 @@ enterLevel();
     function saveGame() {
         var id = $('#cardModal #gameModalID').val().trim();
        $.ajax({
-             method: 'POST',
+	    method: 'POST',
             url: _config.api.invokeUrl + 'gamesave?id=' +id,
             headers: {
                 Authorization: authToken
@@ -431,18 +431,16 @@ enterLevel();
     function loadGame() {
         var id = $('#cardModal #gameModalID').val().trim();
 	$.ajax({
-            method: 'POST',
-            url: _config.api.invokeUrl + 'gamesave?id=' +id,
+            method: 'GET',
+            url: _config.api.invokeUrl + 'gameload?id=' +id,
 	    crossOrigin: true,
             headers: {
-                'Referer': _config.api.invokeUrl,
 		'Authorization': authToken,
-		'Access-Control-Allow-Origin': '*'
             },
             data: '',
             contentType: 'application/json',
-            success: function() {
-		GD = jqXHR.responseText();
+            success: function(data) {
+		GD = JSON.parse(data);
 		$('#cardModal').modal('hide');
 		enterLevel();
 	    },
