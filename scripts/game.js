@@ -9,14 +9,18 @@ var todo = true;
 var GD = {};	    // Game Data: presisted as JSON object
 var cardQueue =	[]; // Attack objects waiting for user to run, {phase,title,html,type,action}
 var actionQueue	= [];	// Attacks, bypasses, injects waiting to be shown
-var deployedMitigations	= [];	// Array of id in the form "mitigationCardMXXXX"
+var alertsComplete = false; // Signal to stop processing modals
+
+const colors = {"unavailable": "#111111", "off": "#0074D9",
+		"on": "#2ECC40", "compromised":"#9B870C", "broken":"#FF4136",
+		"black": "#111111", "blue":"#0074D9", "red":"#FF4136", "green":"#2ECC40", "yellow":"#FFDC00"};
 
 function runDefense () {
     // Invoked when the player clicks the "RUN DEFENSE" button
-    var success	= true;	// until shown otherwise
+    alertsComplete = false;
     
     cardQueue.forEach(function (c) {
-	// Cycler through the queue: attacks, bypasses, injects
+	// Cycle through the queue: attacks, bypasses, injects
 
 	switch(c.type) {
 	  case "technique":
@@ -30,13 +34,14 @@ function runDefense () {
 	    // Ingore technique if mitigation is deployed
 	    var blocked = false;
 	    var needed = mitreAttack.relationships.filter(o => o.technique === c.id);
-	    deployedMitigations.forEach( function(m) {
-		needed.forEach( function(n) {
-		    if( m.includes(n.mitigation) ) {
+	    needed.forEach( function(n) {
+		var m = mitreAttack.mitigations.find(o => o.id === n.mitigation);
+		if( m.inplay === true ) {
+		    if( m.state === 'on' ) {
 			// Proper mitigation card deployed
 			blocked = true;
 		    }
-		});
+		}
 	    });
 	    if( blocked ) {
 		// Mitigation is in place
@@ -53,28 +58,10 @@ function runDefense () {
 	  case "inject":
 	    // show modal for attack action is taken by modal button
 	    actionQueue.push(c);
-	    if( c.type === "technique" || c.type === "bypass" ) {
-		success = false;
-	    }
-	    break;
-	  default:
-	    // ignoring the error: TODO
 	}
     });
-
-    if ( success === true ) {
-        GD.level += 1;
-	if ( GD.level === GD.levels.length ) {
-	    // Show winner modal
-	    showWinnerModal();
-	} else {
-	    // Show success modal
-	    showSuccessModal();
-	    enterLevel();
-	}
-    } else {
-        showIncidentModal();
-    }    
+    cardQueue = [];
+    showIncidentModal();
 }
 
 function handleEvent(e) {
@@ -84,57 +71,7 @@ function handleEvent(e) {
 function addListeners(xhr) {
     xhr.addEventListener('error', handleEvent);
 }
-function loadGameTODO () {
-    // Load button is rendered as a modal
-    var id = $('#cardModal #gameModalID').val().trim();
-    var url = _config.api.invokeUrl + '/gameload?id=' + id;
     
-    GD = $.ajax({
-	url: url,
-	async: false,
-	error: function(xhr, status, error){
-	     var errorMessage = xhr.status + ': ' + xhr.statusText
-	     alert('Error - Could not load game\n' + url + '\n' + errorMessage);
-	 }
-    }).responseJSON;
-}
-
-function TODOsaveGame () {
-    // Save button is rendered as a model
-    var id = $('#cardModal #gameModalID').val().trim();
-
-    var xhr = new XMLHttpRequest();
-    addListeners(xhr);
-    xhr.open("POST", '/saveGame?id=' + id, true);
-    xhr.setRequestHeader('Content-Type', 'application/json');
-    xhr.send(JSON.stringify(GD));
-}
-
-// Function group  to allow mitigation drag-n-drop
-function allowDrop (ev) {
-    ev.preventDefault();
-}
-function dragStart (ev) {
-    ev.dataTransfer.setData ("text",  ev.target.id);
-}
-function dragDrop (ev) {
-    ev.preventDefault ();
-    
-    if( GD.budget === 0 ) {
-	return;
-    }
-    
-    var data =  ev.dataTransfer.getData ("text");
-    ev.target.appendChild (document.getElementById(data));
-    
-    // Array populated for runDefense()
-    deployedMitigations.push(data);
-    GD.budget -= 1;
-    updateStatus();
-}
-
-
-
 // Modal functions
 const gameIdtext = [
     '<div class="input-group mb-3"> <div class="input-group-prepend">',
@@ -188,6 +125,10 @@ function showModal (title, html, footer) {
 }
 
 function showIncidentModal () {
+    if( alertsComplete === true ) {
+	return false;
+    }
+    
     // Use the budget number from current modal before moving the queue
     var m = jQuery('#cardModal');
 
@@ -195,50 +136,89 @@ function showIncidentModal () {
     var a = actionQueue.pop();
     if( a != undefined ) {
 	// Modal dismiss actions will recursively callback to this function
-        m.data( "damage", "-1" );
 	showAlert(a);
+    } else {
+	// Queue empty, did we win?
+	alertsComplete = true;
+	
+	if( GD.budget < 0 ) {
+	    // Ran out of money
+	    showGameOverModal();
+	    return false;
+	}
+	if( GD.attackStatus >= 3 ) {
+	    // Data exfil
+	    showGameOverModal();
+	    return false;
+	}
+
+	// Made through this level
+	GD.level += 1;
+	if ( GD.level === GD.levels.length ) {
+	    // Show winner modal
+	    showWinnerModal();
+	} else {
+	    // Show success modal
+	    showSuccessModal();
+	    enterLevel();
+	}
     }
     return false;
 }
 
-function assessDamage (amount) {
+function assessDamage (cost, id) {
     // Budget hits are negative
-    GD.budget += amount;
+    GD.budget += cost;
     updateStatus();	
 
-    if( GD.budget < 0 ) {
-	// Game over
-	showGameOverModal();
-	return;
+    if( id != 0 ) {
+	// eval against deployed mitigations
+	var needed = mitreAttack.relationships.filter(o => o.technique === id);
+	needed.forEach( function(n) {
+	    var m = mitreAttack.mitigations.find(o => o.id === n.mitigation);
+	    if( m.inplay === true ) {
+		if( m.state != 'on' ) {
+		    // Mitigation not in use
+		    setMitigationState( m.id, "compromised" );
+		}
+	    }
+	});
     }
-
 }
 
 // Avoiding eval()
 function looseParse(obj) { return Function('"use strict";return (' + obj + ')')(); }
 
-let showAlert = (a) => {
+function showAlert (action) {
     var m = jQuery('#cardModal');
-//    m.modal('hide');
+    var mitrelink = "<div class='d-flex justify-content-center'><br><a target='_blank' href='https://attack.mitre.org/techniques/" 
+		    + action.id + "'><h5>Mitre Att&amp;ck: technique details</h5></a></div>";
 
-    m.find('.modal-title').text(a.title);
-    m.find('.modal-body').html(a.html);
+    
+    m.find('.modal-title').text(action.title);
+    m.find('.modal-body').html(action.html + "<div>"  + mitrelink + "</div>");
 
     // Build callback buttons
+    var ignBtn = '<button type="button" id="modalBtnIgnore" class="btn btn-default btn-ok" data-dismiss="modal">Ignore</button>';
+    if( action.type === 'inject' ) {
+	ignBtn = '';
+    }
     var btnHtml = [
-	'<button type="button" id="modalBtnIgnore" class="btn btn-default btn-ok" data-dismiss="modal">Ignore</button>',
+	'<div class="align-items-center">' + ignBtn,
 	'<button type="button" id="modalBtnAccept" ',
-	'class="btn btn-default btn-ok bg-danger" data-dismiss="modal">Accept</button>',
+	'class="btn btn-default btn-ok bg-danger" data-dismiss="modal">' + action.cost + ' Credits</button></div>',
     ].join("\n");
     m.find('.modal-footer').html(btnHtml);
-    jQuery('#modalBtnIgnore').on('click', function(event) {
-	// TODO add as bypass or remove mitigation from game?
-	looseParse( "{a:assessDamage(-2)}" );
- 	showIncidentModal();
-	event.preventDefault();
-    });
+    if( action.type != 'inject' ) {
+	jQuery('#modalBtnIgnore').on('click', function(event) {
+	    // TODO add as bypass or remove mitigation from game?
+    	    looseParse( "{a:assessDamage(" + action.cost + ",'" + action.id + "')}" );
+	    showIncidentModal();
+	    event.preventDefault();
+        });
+    }
     jQuery('#modalBtnAccept').on('click', function(event) {
-	looseParse( "{a:assessDamage(-2)}" );
+	looseParse( "{a:assessDamage(" + action.cost + ",'" + action.id + "')}" );
  	showIncidentModal();
 	event.preventDefault();
     });
@@ -252,36 +232,14 @@ $('#cardModal').on('hidden.bs.modal', function () {
     showIncidentModal();
 });
 
-let showMitigationModal = (id) => {
+function showMitigationModal (id) {
     var m = mitreAttack.mitigations.find(o => o.id === id);
-    showModal(m.name, m.description );
-}
-
-let showTechniqueModal = (id) => {
-    var t = mitreAttack.techniques.find(o => o.technique === id);
-    showModal(t.name, t.description );
+    var footer = "<div class='align-items-center'><div><a target='_blank'href='https://attack.mitre.org/mitigations/" + 
+		    m.id + "'><h5>Mitre Att&amp;ck: mitigation details</h5></a></div></div>";
+    showModal(m.name, m.description, footer );
     return false;
 }
 
-
-// Find an ID in the JSON data
-function findId (json, id) {
-    let x;
-
-    for( var key in json ) {
-	if ( Array.isArray(json[key]) ) {
-	    json[key].forEach(function(obj) {
-		if(obj.hasOwnProperty('id')){
-		    if (obj.id === id ) {
-			x = obj;
-		    };
-		};
-	    });
-	};
-    };
-    return x;
-}
-    
 function updateStatus () {
     // Update the button to run the game
 
@@ -295,7 +253,6 @@ function updateStatus () {
 	'<div class="btn-group mb-2" role="group" aria-label="Basic example">',
 	'<h4 class="align-self-center text-uppercase fw-bold bg-' + color + ' float-left mr-3">' + statusText[GD.attackStatus] + '<h4>',
 	'<h4 class="align-self-center  mr-3">' + GD.levels[GD.level].title + '</h4>',
-	'<button type="button" class="btn btn-' + color + ' float-right mr-3" onclick="runDefense()"><h4>RUN</h4></button>',
 	'<h4 class="align-self-center mr-3">Credits: ' + GD.budget + '</h4>',
 	'</div>',
     ].join("\n");
@@ -304,17 +261,48 @@ function updateStatus () {
     b.innerHTML = html;
 } 
 
-let createMitigationCard = (div, proc) => {
-    // Generate dragable button for each mitigation
-    var html = [
-	'<div id="mitigationCard' + proc.id + '" draggable="true" ondragstart="dragStart (event)">',
-	'<button class="cardBtn" onclick="showMitigationModal(\'' + proc.id + '\');event.preventDefault();">' + proc.name,
-	'</button></div></div>',
-    ].join("\n");
-    div.append(html);
+function setMitigationState(id, state) {
+    if( GD.budget === 0 ) {
+	return;
+    }
+    
+    // Array populated for runDefense()
+    var m = mitreAttack.mitigations.find(o => o.id === id);
+    m.state = state;
+    GD.budget -= 1;
+    updateStatus();
+    document.getElementById('mitigationCard' + id).style.backgroundColor = colors[state]; 
+}		
+
+function flipMitigationState(id) {
+    var c;
+    var cb = document.getElementById("mitigationCB" + id);
+    cb.checked = !cb.checked;
+    if(cb.checked) {
+	    setMitigationState(id, "on" );
+    } else {
+	    setMitigationState(id, "off" );
+    }
+    return true;
 }
 
-  
+function createMitigationCard (div, m) {
+    // Generate clickable button for each mitigation
+    var html = [
+	'<div >',
+	'<div id="mitigationCard' + m.id + '" class="cardBtn">',
+	'<div class="checkbox cardBtnL"><input type="checkbox" id="mitigationCB' + m.id + '" ',
+	'value="optionL" onclick="flipMitigationState(\'' + m.id + '\')">',
+	'<label for="mitigationCB' + m.id + '"></label></div> ',
+	'<button class="cardBtnL" onclick="flipMitigationState(\'' + m.id + '\')">',
+	m.name + '</button>',
+	'<button class="cardBtnR" onclick="showMitigationModal(\'' + m.id + '\');event.preventDefault();">',
+	'<i class="fa fa-info-circle"></i></button></div></div>',
+    ].join("\n");
+    div.append(html);
+    m.inplay = true;
+}
+
     
 function enterLevel () {
     // User is entering a new level
@@ -333,15 +321,27 @@ function enterLevel () {
     });
     
     // Should already be empty at this point
-    attackCards = []; // {phase,title,html,type,action}
+    attackCards = []; // {phase,title,html,type,cost}
     
     // Add bypasses for this level
-    stage.bypasses.forEach(function(id) {
-	var technique = mitreAttack.techniques.find(o => o.technique === id);
-	var a = {"phase": 0, "title": technique.name, "html": technique.description, "type": "bypass",
-			"id": technique.technique, "action": -1 }
+    for( var i=0; i<GD.levels[GD.level].numberOfBypasses; ++i ) {
+	var inplay = GD.bypasses.filter(o => o.used === false);
+	var b = inplay[Math.floor(Math.random() * inplay.length)];
+	b.used = true;
+	var a = {"phase": 0, "title": "Mitigation Failure", "html": b.description, "type": "bypass",
+			"id": 0, "cost": -1, "color": colors.red }
 	cardQueue.push(a);
-    });
+    };
+    
+    // Add injects for this level
+    for( var i=0; i<GD.levels[GD.level].numberOfInjects; ++i ) {
+	var inplay = GD.injects.filter(o => o.used === false);
+	var b= GD.injects[Math.floor(Math.random() * inplay.length)];
+	b.used = false;
+	var a = {"phase": 0, "title": b.title, "html": b.html, "type": "inject",
+			"id": 0, "cost": b.cost, "color": b.color }
+	cardQueue.push(a);
+    };
     
     // Add attack techniques
     var techniques = [stage.compromises, stage.escalations, stage.exfils ];
@@ -350,7 +350,7 @@ function enterLevel () {
 	t.forEach(function(id) {
 	    var technique = mitreAttack.techniques.find(o => o.technique === id);
 	    var a = {"phase": phase, "title": technique.name, "html": technique.description, "type": "technique",
-			    "id": technique.technique, "action": -1 }
+			    "id": technique.technique, "cost": -1 }
 	    cardQueue.push(a);
 	});
 	phase += 1;
@@ -358,7 +358,7 @@ function enterLevel () {
     
     // Sort cards into appropriate phases
     cardQueue = cardQueue.sort(function X(a, b) {
-	return a.phase < b.phase ?  1 : a.phase > b.phase ? -1 : 0;
+	return a.phase > b.phase ?  1 : a.phase < b.phase ? -1 : 0;
     });
     
     // Show the RUN DEFENSE button to user
@@ -375,6 +375,12 @@ mitreAttack = $.ajax({
 	 alert('Error - MitreAttack.json' + errorMessage);
      }
 }).responseJSON;
+// Force initial state
+mitreAttack.mitigations.forEach(function(m) {
+    m.inplay = false;
+    m.state = "off";
+});
+
 
 // Read game data
 GD = $.ajax({
@@ -385,70 +391,74 @@ GD = $.ajax({
 	 alert('Error - game.json' + errorMessage);
      }
 }).responseJSON;
+// Force initial state
+GD.bypasses.forEach(function(b) { b.used = false; });
+GD.injects.forEach(function(m) { m.used = false; });
+
 
 // Setup the initial gameboard
 enterLevel();
 
-    var authToken;
+var authToken;
 
-    // Bypass auth if running from a local server
-    if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {
-	;
-    } else {
-	Wlowi.authToken.then(function setAuthToken(token) {
-	    if (token) {
-		authToken = token;
-	    } else {
-		window.location.href = '/signin.html';
-	    }
-	}).catch(function handleTokenError(error) {
-	    alert(error);
+// Bypass auth if running from a local server
+if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {
+    ;
+} else {
+    Wlowi.authToken.then(function setAuthToken(token) {
+	if (token) {
+	    authToken = token;
+	} else {
 	    window.location.href = '/signin.html';
-	});
-    }
-    
-    function saveGame() {
-        var id = $('#cardModal #gameModalID').val().trim();
-       $.ajax({
-	    method: 'POST',
-            url: _config.api.invokeUrl + 'gamesave?id=' +id,
-            headers: {
-                Authorization: authToken
-            },
-            data: JSON.stringify(GD),
-            contentType: 'application/json',
-            success: function() {
-		$('#cardModal').modal('hide');
-	    },
-            error: function ajaxError(jqXHR, textStatus, errorThrown) {
-                console.error('Error requesting game: ', textStatus, ', Details: ', errorThrown);
-                console.error('Response: ', jqXHR.responseText);
-                alert('An error occured when requesting your game:\n' + jqXHR.responseText);
-            }
-        });
-    }
+	}
+    }).catch(function handleTokenError(error) {
+	alert(error);
+	window.location.href = '/signin.html';
+    });
+}
 
-    function loadGame() {
-        var id = $('#cardModal #gameModalID').val().trim();
-	$.ajax({
-            method: 'GET',
-            url: _config.api.invokeUrl + 'gameload?id=' +id,
-	    crossOrigin: true,
-            headers: {
-		'Authorization': authToken,
-            },
-            data: '',
-            contentType: 'application/json',
-            success: function(data) {
-		GD = data.Game;
-		$('#cardModal').modal('hide');
-		enterLevel();
-	    },
-            error: function ajaxError(jqXHR, textStatus, errorThrown) {
-                console.error('Error requesting game: ', textStatus, ', Details: ', errorThrown);
-                console.error('Response: ', jqXHR.responseText);
-                alert('An error occured when requesting your game:\n' + jqXHR.responseText);
-            }
-        });
-    }
+function saveGame() {
+    var id = $('#cardModal #gameModalID').val().trim();
+   $.ajax({
+	method: 'POST',
+	url: _config.api.invokeUrl + 'gamesave?id=' +id,
+	headers: {
+	    Authorization: authToken
+	},
+	data: JSON.stringify(GD),
+	contentType: 'application/json',
+	success: function() {
+	    $('#cardModal').modal('hide');
+	},
+	error: function ajaxError(jqXHR, textStatus, errorThrown) {
+	    console.error('Error requesting game: ', textStatus, ', Details: ', errorThrown);
+	    console.error('Response: ', jqXHR.responseText);
+	    alert('An error occured when requesting your game:\n' + jqXHR.responseText);
+	}
+    });
+}
+
+function loadGame() {
+    var id = $('#cardModal #gameModalID').val().trim();
+    $.ajax({
+	method: 'GET',
+	url: _config.api.invokeUrl + 'gameload?id=' +id,
+	crossOrigin: true,
+	headers: {
+	    'Authorization': authToken,
+	},
+	data: '',
+	contentType: 'application/json',
+	success: function(data) {
+	    GD = data.Game;
+	    $('#cardModal').modal('hide');
+	    enterLevel();
+	},
+	error: function ajaxError(jqXHR, textStatus, errorThrown) {
+	    console.error('Error requesting game: ', textStatus, ', Details: ', errorThrown);
+	    console.error('Response: ', jqXHR.responseText);
+	    alert('An error occured when requesting your game:\n' + jqXHR.responseText);
+	}
+    });
+}
 

@@ -41,22 +41,38 @@ html {
   background: url("../img/me-myself-and-i.jpg") no-repeat center center;
 }
 
-.cardBtn {
-  background-color: #303fa0;
-  width: 250px;
+.cardBtnL {
+  background-color: transparent;
+  float: left;
   border: none;
   color: white;
+  display: inline-block;
+}
+
+.cardBtnR {
+  background-color: transparent;
+  float: right;
+  border: none;
+  color: white;
+  display: inline-block;
+}
+
+.cardBtn {
+  background-color: #0074D9;
+  color: white;
   padding: 5px;
-  text-align: center;
+  text-align: left;
   text-decoration: none;
-  display: block;
-  font-size: 16px;
-  margin: 4px 2px;
-  border-radius: 10px;
+  display: inline-block;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: Arial;
+  margin: 5px 12px;
+  border-radius: 7px;
 }
 
 .runBtn {
-  background-color: green;
+  background-color: #0074D9;
   border: none;
   color: white;
   padding: 6px;

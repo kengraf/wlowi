@@ -16,8 +16,8 @@
 			"compromises": ["T1133","T1566"],
 			"escalations": ["T1059","T1078"],
 			"exfils": ["T1537"],
-			"bypasses": [],
 			"numberOfInjects": 0,
+			"numberOfBypasses": 0,
 			"background": "../img/me-myself-and-i.jpg"
 		},
 		{
@@ -25,274 +25,474 @@
 			"levelBudget": 6, 
 			"successModalHtml": "todo",
 			"failureModalHtml": "todo",
-			"compromises": ["T1133"],
-			"escalations": ["T1133"],
-			"exfils": ["T1133"],
-			"bypasses": [],
-			"numberOfInjects": 0,
+			"compromises": ["T1021","1087"],
+			"escalations": ["T1036"],
+			"exfils": ["T1485"],
+			"numberOfInjects": 1,
+			"numberOfBypasses": 1,
 			"background": "../img/real-customers.jpg"
 		},
 		{
 			"title": "Hacktivists vs. IPO",
-			"levelBudget": 6, 
+			"levelBudget": 8, 
 			"successModalHtml": "todo",
 			"failureModalHtml": "todo",
-			"compromises": ["T1133"],
-			"escalations": ["T1133"],
-			"exfils": ["T1133"],
-			"bypasses": [],
-			"numberOfInjects": 0,
+			"compromises": ["T1098", "T1110"],
+			"escalations": ["T1003", "T1047"],
+			"exfils": ["T1486", "T1027"],
+			"numberOfInjects": 2,
+			"numberOfBypasses": 1,
 			"background": "../img/ipo.jpg"
 		},
 		{
 			"title": "Cyber Criminals vs. Fortune 500",
-			"levelBudget": 6, 
+			"levelBudget": 10, 
 			"successModalHtml": "todo",
 			"failureModalHtml": "todo",
-			"compromises": ["T1133"],
-			"escalations": ["T1133"],
-			"exfils": ["T1133"],
-			"bypasses": [],
-			"numberOfInjects": 0,
+			"compromises": ["T1190", "T1018"],
+			"escalations": ["T11569", "T1016"],
+			"exfils": ["T1090", "T1102"],
+			"numberOfInjects": 3,
+			"numberOfBypasses": 2,
 			"background": "../img/fortune500.jpg"
 		},
 		{
 			"title": "Espionage vs. Defense Contractor",
-			"levelBudget": 6, 
+			"levelBudget": 15, 
 			"successModalHtml": "todo",
 			"failureModalHtml": "todo",
-			"compromises": ["T1133"],
-			"escalations": ["T1133"],
-			"exfils": ["T1133"],
-			"bypasses": [],
-			"numberOfInjects": 0,
+			"compromises": ["T1222","T1578"],
+			"escalations": ["T1055", "T1538", "T1029"],
+			"exfils": ["T1133", "T1530", "T1565"],
+			"numberOfInjects": 4,
+			"numberOfBypasses": 3,
 			"background": "../img/defense-contractor.jpg"
 		},
 		{
 			"title": "Nation States vs. The Pentagon",
-			"levelBudget": 6, 
+			"levelBudget": 25, 
 			"successModalHtml": "todo",
 			"failureModalHtml": "todo",
-			"compromises": ["T1133"],
-			"escalations": ["T1133"],
-			"exfils": ["T1133"],
-			"bypasses": [],
-			"numberOfInjects": 0,
+			"compromises": ["T1106", "T1550"],
+			"escalations": ["T1548", "T1012", "T1558", "T1211"],
+			"exfils": ["T1074", "T1573", "T1011", "T1001", "1599"],
+			"numberOfInjects": 5,
+			"numberOfBypasses": 5,
 			"background": "../img/pentagon.jpg"
 		}
 	],
-	"injects": [
-	    {
-		"color": "black",
-		"title": "CERT engaged",
-		"compromise": "1",
-		"cost": "-4",
-		"html": "A Computer Emergency Response team (CERT) is engaged to address current incident."
-	    },
-	    {
-		"color": "white",
-		"title": "New CISO",
-		"cost": "2",
-		"html": "The newly hired CISO provides insights into current attacks.  The saving budget to address likely attacks."
-	    },
-	    {
-		"color": "yellow",
-		"title": "Failed Corticate",
-		"cost": "-2",
-		"html": "You need to redo a failed certification."
-	    },
-	    {
-		"color": "blue",
-		"title": "New Lead Infosec Analyst",
-		"cost": "1",
-		"html": "You have hired an amazing Lead Infosec Analyst. Their ability to quickly get to root cause will cut remediation times in half."
-	    },
-	    {
-		"color": "red",
-		"title": "Hacktivists",
-		"cost": "-3",
-		"html": "Hacktivists are assaulting your social media accounts.  You need to divert resources to monitor 3rd party services."
-	    },
-	    {
-		"color": "blue",
-		"title": "IT Security consultant",
-		"cost": "2",
-		"html": "The IT security consultant recommends new additional mitigations from new vendors to improve operational efficiency."
-	    },
-	    {
-		"color": "blue",
-		"title": "IT Security Engineer",
-		"cost": "-1",
-		"html": "The new IT security engineer fat fingers the security dashboard and shuts down your firewall's key security services."
-	    },
-	    {
-		"color": "Red",
-		"title": "Penetration Tester",
-		"cost": "-2",
-		"html": "A rouge pen tester has posted vulnerabilities on social networks.  You need to remediate the issues now."
-	    },
-	    {
-		"color": "green",
-		"title": "Penetration Tester",
-		"cost": "2",
-		"html": "A responsible disclosure pen tester has found a few vulnerabilities in your system.  The savings on discovery will help fund remediations."
-	    },
-	    {
-		"color": "green",
-		"title": "Bug bounty Offered",
-		"cost": "1",
-		"html": "You enroll in a bug bounty program, saving budget on penetration testing."
-	    },
-	    {
-		"color": "blue",
-		"title": "Security Administrator",
-		"cost": "1",
-		"html": "Your security administrator quickly reacts to an alert in the SOC saving remediation costs."
-	    },
-	    {
-		"color": "red",
-		"title": "Malicious App",
-		"compromise": "bypass",
-		"cost": "-2",
-		"html": "Your sales teams has deployed a mobile app that is malicious and allowing attackers the opportunity to escalate."
-	    },
-	    {
-		"color": "black",
-		"title": "Outdated Policy",
-		"cost": "-1",
-		"html": "Your policy is so outdated it is forcing poor decision by staff."
-	    },
-	    {
-		"color": "blue",
-		"title": "Scholarship for Service",
-		"cost": "1",
-		"html": "The press related to your interns being selected by the Cyber Corps program is helping recruiting."
-	    },
-	    {
-		"color": "yellow",
-		"title": "Missing Firewalls Rules",
-		"cost": "-2",
-		"html": "Your firewall has not been keeping up with rule updates."
-	    },
-	    {
-		"color": "green",
-		"title": "Budget Increase",
-		"cost": "1",
-		"html": "Your cost saving programs have netted your team a small budget increase."
-	    },
-	    {
-		"color": "green",
-		"title": "Budget Increase",
-		"cost": "2",
-		"html": "Management has growing concerns about hackers, and is prioritizing a bigger budget."
-	    },
-	    {
-		"color": "green",
-		"title": "Budget Increase",
-		"cost": "4",
-		"html": "Management has made security a priority and bumped your budget."
-	    },
-	    {
-		"color": "green",
-		"title": "Secure Coding Practices",
-		"cost": "1",
-		"html": "Secure coding practices are reducing the number of findings from pen testing."
-	    },
-	    {
-		"color": "red",
-		"title": "Website defacement",
-		"cost": "2",
-		"html": "Your CDN provider was compromised.   You need find a new provider."
-	    },
-	    {
-		"color": "blue",
-		"title": "CyberPatriot",
-		"cost": "1",
-		"html": "The PR from supporting the CyberPatriot program is helping with intern recruitment."
-	    },
-	    {
-		"color": "black",
-		"title": "Cyber Threat Analysis",
-		"cost": "1",
-		"html": "Cyber threat analysis matches real-world threat against your vulnerabilities.  Allowing budget for another mitigation."
-	    },
-	    {
-		"color": "black ",
-		"title": "Advanced Threat Monitoring",
-		"cost": "1",
-		"html": "Installing Advanced threat protection will  provide protection from endpoints against known malicious code, save on remediation costs."
-	    },
-	    {
-		"color": "blue",
-		"title": "Attend Security Conference",
-		"cost": "2",
-		"html": "Attending a security conference has allowed you hear about the most current attack techniques and mitigations."
-	    },
-	    {
-		"color": "red",
-		"title": "Budget Cut",
-		"cost": "-3",
-		"html": "Management has decided to reduce operational costs to prioritize growing the business.  The budget hit hurts."
-	    },
-	    {
-		"color": "blue",
-		"title": "Information Sharing",
-		"cost": "3",
-		"html": "You join a group of fellow CISOs to share your experiences and best practices.  The long term vision is very helpful with mitigation deployments."
-	    },
-	    {
-		"color": "blue",
-		"title": "Security Group Membership",
-		"cost": "1",
-		"html": "You join a security group to share your experiences and best practices.  Saving budget on deployment costs."
-	    },
-	    {
-		"color": "yellow",
-		"title": "Privacy Violation",
-		"cost": "-1",
-		"html": "An audit of your companies privacy policy has revealed shortcomings in your implementation."
-	    },
-	    {
-		"color": "yellow",
-		"title": "Threat Analysis",
-		"cost": "-1",
-		"html": "An audit of your companies security control has revealed shortcomings in your implementation."
-	    },
-	    {
-		"color": "yellow",
-		"title": "Unscheduled Maintenance",
-		"cost": "-1",
-		"html": "Unscheduled maintenance in the SOC is diverting resources."
-	    },
-	    {
-		"color": "yellow",
-		"title": "Anti-Malware Not Updated",
-		"cost": "-1",
-		"html": "Your team has not been keeping up with updates.  You incur extra expenses to catch up now."
-	    },
-	    {
-		"color": "blue",
-		"title": "Security Training",
-		"cost": "1",
-		"html": "Your risk team attends training and you able to improve your controls."
-	    },
-	    {
-		"color": "red",
-		"title": "Key Disclosure",
-		"cost": "-1",
-		"html": "An admin has posted a server key in a public repo, you need to rotate the key on the servers now."
-	    },
-	    {
-		"color": "yellow",
-		"title": "OS not Patched",
-		"cost": "-1",
-		"html": "Your team has not been keeping up with updates.  You incur extra expenses to automated the process."
-	    },
-	    {
-		"color": "yellow",
-		"title": "Hardware failure",
-		"cost": "-2",
-		"html": "A firewall has failed and others are past end of life.  Time to replace the hardware."
-	    }
-	]
+    "injects": [
+	{
+	    "color": "black",
+	    "title": "CERT engaged",
+	    "compromise": "1",
+	    "cost": "-4",
+	    "html": "A Computer Emergency Response team (CERT) is engaged to address current incident."
+	},
+	{
+	    "color": "white",
+	    "title": "New CISO",
+	    "cost": "2",
+	    "html": "The newly hired CISO provides insights into current attacks.  The saving budget to address likely attacks."
+	},
+	{
+	    "color": "yellow",
+	    "title": "Failed Corticate",
+	    "cost": "-2",
+	    "html": "You need to redo a failed certification."
+	},
+	{
+	    "color": "blue",
+	    "title": "New Lead Infosec Analyst",
+	    "cost": "1",
+	    "html": "You have hired an amazing Lead Infosec Analyst. Their ability to quickly get to root cause will cut remediation times in half."
+	},
+	{
+	    "color": "red",
+	    "title": "Hacktivists",
+	    "cost": "-3",
+	    "html": "Hacktivists are assaulting your social media accounts.  You need to divert resources to monitor 3rd party services."
+	},
+	{
+	    "color": "blue",
+	    "title": "IT Security consultant",
+	    "cost": "2",
+	    "html": "The IT security consultant recommends new additional mitigations from new vendors to improve operational efficiency."
+	},
+	{
+	    "color": "blue",
+	    "title": "IT Security Engineer",
+	    "cost": "-1",
+	    "html": "The new IT security engineer fat fingers the security dashboard and shuts down your firewall's key security services."
+	},
+	{
+	    "color": "Red",
+	    "title": "Penetration Tester",
+	    "cost": "-2",
+	    "html": "A rouge pen tester has posted vulnerabilities on social networks.  You need to remediate the issues now."
+	},
+	{
+	    "color": "green",
+	    "title": "Penetration Tester",
+	    "cost": "2",
+	    "html": "A responsible disclosure pen tester has found a few vulnerabilities in your system.  The savings on discovery will help fund remediations."
+	},
+	{
+	    "color": "green",
+	    "title": "Bug bounty Offered",
+	    "cost": "1",
+	    "html": "You enroll in a bug bounty program, saving budget on penetration testing."
+	},
+	{
+	    "color": "blue",
+	    "title": "Security Administrator",
+	    "cost": "1",
+	    "html": "Your security administrator quickly reacts to an alert in the SOC saving remediation costs."
+	},
+	{
+	    "color": "red",
+	    "title": "Malicious App",
+	    "compromise": "bypass",
+	    "cost": "-2",
+	    "html": "Your sales teams has deployed a mobile app that is malicious and allowing attackers the opportunity to escalate."
+	},
+	{
+	    "color": "black",
+	    "title": "Outdated Policy",
+	    "cost": "-1",
+	    "html": "Your policy is so outdated it is forcing poor decision by staff."
+	},
+	{
+	    "color": "blue",
+	    "title": "Scholarship for Service",
+	    "cost": "1",
+	    "html": "The press related to your interns being selected by the Cyber Corps program is helping recruiting."
+	},
+	{
+	    "color": "yellow",
+	    "title": "Missing Firewalls Rules",
+	    "cost": "-2",
+	    "html": "Your firewall has not been keeping up with rule updates."
+	},
+	{
+	    "color": "green",
+	    "title": "Budget Increase",
+	    "cost": "1",
+	    "html": "Your cost saving programs have netted your team a small budget increase."
+	},
+	{
+	    "color": "green",
+	    "title": "Budget Increase",
+	    "cost": "2",
+	    "html": "Management has growing concerns about hackers, and is prioritizing a bigger budget."
+	},
+	{
+	    "color": "green",
+	    "title": "Budget Increase",
+	    "cost": "4",
+	    "html": "Management has made security a priority and bumped your budget."
+	},
+	{
+	    "color": "green",
+	    "title": "Secure Coding Practices",
+	    "cost": "1",
+	    "html": "Secure coding practices are reducing the number of findings from pen testing."
+	},
+	{
+	    "color": "red",
+	    "title": "Website defacement",
+	    "cost": "2",
+	    "html": "Your CDN provider was compromised.   You need find a new provider."
+	},
+	{
+	    "color": "blue",
+	    "title": "CyberPatriot",
+	    "cost": "1",
+	    "html": "The PR from supporting the CyberPatriot program is helping with intern recruitment."
+	},
+	{
+	    "color": "black",
+	    "title": "Cyber Threat Analysis",
+	    "cost": "1",
+	    "html": "Cyber threat analysis matches real-world threat against your vulnerabilities.  Allowing budget for another mitigation."
+	},
+	{
+	    "color": "black ",
+	    "title": "Advanced Threat Monitoring",
+	    "cost": "1",
+	    "html": "Installing Advanced threat protection will  provide protection from endpoints against known malicious code, save on remediation costs."
+	},
+	{
+	    "color": "blue",
+	    "title": "Attend Security Conference",
+	    "cost": "2",
+	    "html": "Attending a security conference has allowed you hear about the most current attack techniques and mitigations."
+	},
+	{
+	    "color": "red",
+	    "title": "Budget Cut",
+	    "cost": "-3",
+	    "html": "Management has decided to reduce operational costs to prioritize growing the business.  The budget hit hurts."
+	},
+	{
+	    "color": "blue",
+	    "title": "Information Sharing",
+	    "cost": "3",
+	    "html": "You join a group of fellow CISOs to share your experiences and best practices.  The long term vision is very helpful with mitigation deployments."
+	},
+	{
+	    "color": "blue",
+	    "title": "Security Group Membership",
+	    "cost": "1",
+	    "html": "You join a security group to share your experiences and best practices.  Saving budget on deployment costs."
+	},
+	{
+	    "color": "yellow",
+	    "title": "Privacy Violation",
+	    "cost": "-1",
+	    "html": "An audit of your companies privacy policy has revealed shortcomings in your implementation."
+	},
+	{
+	    "color": "yellow",
+	    "title": "Threat Analysis",
+	    "cost": "-1",
+	    "html": "An audit of your companies security control has revealed shortcomings in your implementation."
+	},
+	{
+	    "color": "yellow",
+	    "title": "Unscheduled Maintenance",
+	    "cost": "-1",
+	    "html": "Unscheduled maintenance in the SOC is diverting resources."
+	},
+	{
+	    "color": "yellow",
+	    "title": "Anti-Malware Not Updated",
+	    "cost": "-1",
+	    "html": "Your team has not been keeping up with updates.  You incur extra expenses to catch up now."
+	},
+	{
+	    "color": "blue",
+	    "title": "Security Training",
+	    "cost": "1",
+	    "html": "Your risk team attends training and you able to improve your controls."
+	},
+	{
+	    "color": "red",
+	    "title": "Key Disclosure",
+	    "cost": "-1",
+	    "html": "An admin has posted a server key in a public repo, you need to rotate the key on the servers now."
+	},
+	{
+	    "color": "yellow",
+	    "title": "OS not Patched",
+	    "cost": "-1",
+	    "html": "Your team has not been keeping up with updates.  You incur extra expenses to automated the process."
+	},
+	{
+	    "color": "yellow",
+	    "title": "Hardware failure",
+	    "cost": "-2",
+	    "html": "A firewall has failed and others are past end of life.  Time to replace the hardware."
+	}
+    ],
+    "bypasses": [
+	{
+	    "mitigation": "M1049",
+	    "description": "Microsoft has reports that Polymorphic Malware Dexphot affected 80,000 Windows Systems, including yours.",
+	    "bypassurl": "https://www.trendmicro.com/vinfo/nz/security/news/cybercrime-and-digital-threats/microsoft-reports-on-polymorphic-malware-dexphot-that-affected-80-000-windows-systems"
+	},
+	{
+	    "mitigation": "M1053",
+	    "description": "You used Code Spaces to manage backups of your code repositories.  They got hacked and now your repo backups are gone.",
+	    "bypassurl": "https://threatpost.com/hacker-puts-hosting-service-code-spaces-out-of-business/106761/"
+	},
+	{
+	    "mitigation": "M1032",
+	    "description": "MESSAGETAP has been found to be eavesdropping on your SMS messages, and your helpdesk has reported a number of users being locked out of account after password resets.",
+	    "bypassurl": "https://www.andreafortuna.org/2019/11/08/messagetap-eavesdropping-on-sms-messages-inside-telco-networks/"
+	},
+	{
+	    "mitigation": "M1029",
+	    "description": "An employee that is not comfortable with using cloud technologies, So they setup a process to return data back on premise to do their daily work."
+	},
+	{
+	    "mitigation": "M1051",
+	    "description": "The SolarWinds Orion update caught you like many others with malicious software running on your most critical systems.",
+	    "bypassurl": "https://en.wikipedia.org/wiki/2020_United_States_federal_government_data_breach"
+	},
+	{
+	    "mitigation": "M1035",
+	    "description": "Your sales manager works from the road and likes to connect back to his desktop.  While authorized RDP system are protected with MFA, his is not.",
+	    "bypassurl": "https://www.ic3.gov/Media/Y2018/PSA180927"
+	},
+	{
+	    "mitigation": "M1017",
+	    "description": "Some know-it-alls thought they were to good for Phishing training.  Their clicking on bad links means that you are now feeling the pain.",
+	    "bypassurl": "https://www.knowbe4.com/phishing"
+	},
+	{
+	    "mitigation": "M1016",
+	    "description": "You hired out the vulnerability scan to your cousin's friend who claimed to be an elite hacker.  It turns the only thing he knows about Kali is how to spell it.  Your scans are useless.",
+	    "bypassurl": "https://owasp.org/www-community/Vulnerability_Scanning_Tools"
+	},
+	{
+	    "mitigation": "M1013",
+	    "description": "Your plan to train all your developers to be security experts has backfired.  Half quit and the other ignored the training.  After wasting time and money a program to implement negative testing is showing results.",
+	    "bypassurl": "https://smartbear.com/learn/automated-testing/negative-testing/"
+	},
+	{
+	    "mitigation": "M1048",
+	    "description": "Ghostscript SAFER Sandbox Breakout (CVE-2020-15900) has been identified on your systems. ",
+	    "bypassurl": "https://insomniasec.com/blog/ghostscript-cve-2020-15900"
+	},
+	{
+	    "mitigation": "M1052",
+	    "description": " High-Severity Windows UAC flaw is enabling privilege escalation",
+	    "bypassurl": "https://threatpost.com/windows-uac-flaw-privilege-escalation/150463/"
+	},
+	{
+	    "mitigation": "M1018",
+	    "description": "The sales team is trying to save cash by reproposing a retired Magento server.  The server has a number of CVEs that the sales team was not aware of.",
+	    "bypassurl": "https://nvd.nist.gov/vuln/detail/CVE-2019-8116"
+	},
+	{
+	    "mitigation": "M1044",
+	    "description": "You are using NPM module event-stream from a trusted source.  However, the module has flatmap-stream as a dependency, you've been hacked.",
+	    "bypassurl": "https://blog.npmjs.org/post/180565383195/details-about-the-event-stream-incident?utm_source=thenewstack&utm_medium=website&utm_campaign=platform"
+	},
+	{
+	    "mitigation": "M1036",
+	    "description": "Your single sign-on solution can do PUSH NOTIFICATIONS  to notify users when their account is used from a new device.  The feature was never enabled and a user unknowingly was attacked.",
+	    "bypassurl": "https://www.hypr.com/push-authentication/"
+	},
+	{
+	    "mitigation": "M1043",
+	    "description": "A 3rd party SaaS vendor some of your employees use has been hacked and passwords leaked to the dark web.",
+	    "bypassurl": "https://www.comparitech.com/blog/information-security/credential-stuffing-attacks/"
+	},
+	{
+	    "mitigation": "M1037",
+	    "description": "Your SOC is ignoring alerts from the FireEye appliances",
+	    "bypassurl": "https://www.darkreading.com/attacks-and-breaches/target-ignored-data-breach-alarms/d/d-id/1127712"
+	},
+	{
+	    "mitigation": "M1028",
+	    "description": "Business unit forces a delay in patching over concerns that untested changes might impact system availability.",
+	    "bypassurl": "https://www.cnet.com/news/equifaxs-hack-one-year-later-a-look-back-at-how-it-happened-and-whats-changed/"
+	},
+	{
+	    "mitigation": "M1054",
+	    "description": "Development team refuses to move to the latest version due to compatibility issues.",
+	    "bypassurl": "https://www.1e.com/news-insights/blogs/10-unpatched-software-security-breaches/"
+	},
+	{
+	    "mitigation": "M1022",
+	    "description": "An employee leavea your cloud storage set for public access so she can access the data without logging in.",
+	    "bypassurl": "https://www.computerweekly.com/news/252491842/Leaky-AWS-S3-bucket-once-again-at-centre-of-data-breach"
+	},
+	{
+	    "mitigation": "M1015",
+	    "description": "Attackers become domain admin by subverting netlogon cryptography by using  Zerologon: (CVE-2020-1472) ",
+	    "bypassurl": "https://www.secura.com/blog/zero-logon"
+	},
+	{
+	    "mitigation": "M1047",
+	    "description": "CEO allows a pass for a key business unit even though they failed the audit.",
+	    "bypassurl": "https://www.f5.com/labs/articles/cisotociso/the-six-most-common-audit-failures"
+	},
+	{
+	    "mitigation": "M1031",
+	    "description": "Developers claim detection signatures are preventing assess for legitimate users.  So rules are turned down.",
+	    "bypassurl": "https://www.contrastsecurity.com/security-influencers/top-5-challenges-securing-applications-with-web-application-firewalls"
+	},
+	{
+	    "mitigation": "M1030",
+	    "description": "You went down the path of ACLs and VLANs for micro-segmentation, and quite frankly the rules are broken.",
+	    "bypassurl": "https://iiot-world.com/wp-content/uploads/2020/04/Five-Common-Micro-Segmentation-Mistakes-Whitepaper.pdf"
+	},
+	{
+	    "mitigation": "M1027",
+	    "description": " Rather than following the NIST guidance you are forcing complex character sets with changes every 90 days.  A password spray of \"Summer21\" has yield access to 1% of your employees including admins."
+	},
+	{
+	    "mitigation": "M1040",
+	    "description": "Your research team mobile devices have been injected with Simjacker, bypassing your MDM.",
+	    "bypassurl": "https://www.adaptivemobile.com/newsroom/press-release/adaptivemobile-security-uncovers-sophisticated-hacking-attacks-on-mobile-phones-exposing-massive-network-vulnerability"
+	},
+	{
+	    "mitigation": "M1045",
+	    "description": "One of your software vendors has had it's code signing certificate stolen.  For the past 2 months software updates from an attacker have been accepted as valid.",
+	    "bypassurl": "https://securityboulevard.com/2020/04/apts-rats-and-code-signing-attacks/"
+	},
+	{
+	    "mitigation": "M1042",
+	    "description": " Friday afternoon, its late, your admin doesn't care, he skips turning off services on the new system.",
+	    "bypassurl": "https://owasp.org/www-project-top-ten/2017/A6_2017-Security_Misconfiguration"
+	},
+	{
+	    "mitigation": "M1041",
+	    "description": "You relied upon Transparent data encryption (TDE) to secure your SQL database.  This doesn't prevent your database users from seeing sensitive data.",
+	    "bypassurl": "https://en.wikipedia.org/wiki/Transparent_data_encryption"
+	},
+	{
+	    "mitigation": "M1038",
+	    "description": " Attackers bypassing Data Execution Prevention (DEP) using ROP chains",
+	    "bypassurl": "https://medium.com/cybersecurityservices/dep-bypass-using-rop-chains-garima-chopra-e8b3361e50ce"
+	},
+	{
+	    "mitigation": "M1026",
+	    "description": "A terminated employee added backdoor accounts to your PAM system prior to leaving for your competitor.  Your competitor now has access to your data.",
+	    "bypassurl": "https://www.veritis.com/blog/robust-identity-management-with-8-point-iam-audit-checklist-and-iam-strategy/"
+	},
+	{
+	    "mitigation": "M1020",
+	    "description": "The proxy service you are using to inspect traffic has been hacked.  Your employee data is being funneled to unknown attackers.",
+	    "bypassurl": "https://www.zdnet.com/article/free-proxy-service-found-running-on-top-of-2600-hacked-wordpress-sites/"
+	},
+	{
+	    "mitigation": "M1050",
+	    "description": " The SOC got tired of the alert generated by the Exploit Protection solution.  So they are being ignored.",
+	    "bypassurl": "https://docs.microsoft.com/en-us/windows/security/threat-protection/microsoft-defender-atp/defender-endpoint-false-positives-negatives"
+	},
+	{
+	    "mitigation": "M1033",
+	    "description": "A rouge employee has installed the developer version of chromium to bypass your controls on Chrome behavior.",
+	    "bypassurl": "https://support.google.com/chrome/a/answer/2657289?hl=en"
+	},
+	{
+	    "mitigation": "M1024",
+	    "description": "A user is running Gpdisable to escalate privileges via Software Restriction Policies (SRP).",
+	    "bypassurl": "https://techcommunity.microsoft.com/t5/windows-blog-archive/circumventing-group-policy-as-a-limited-user/ba-p/723472"
+	},
+	{
+	    "mitigation": "M1046",
+	    "description": "Your systems have been infected by the LoJax UEFI Rootkit as part of a cyberespionage campaign.",
+	    "bypassurl": "https://www.trendmicro.com/vinfo/us/security/news/cyber-attacks/lojax-uefi-rootkit-used-in-cyberespionage"
+	},
+	{
+	    "mitigation": "M1039",
+	    "description": "The pipeline used to create your cloud compute instances has been \"tweaked\" allowing for privilege escalation.",
+	    "bypassurl": "https://owasp.org/www-community/attacks/Buffer_Overflow_via_Environment_Variables"
+	},
+	{
+	    "mitigation": "M1034",
+	    "description": "Apparently \"the cleaning crew\" has placed a Packet Squirrel on HR's network feed.",
+	    "bypassurl": "https://shop.hak5.org/products/packet-squirrel"
+	},
+	{
+	    "mitigation": "M1025",
+	    "description": " Attackers use a signed driver to bypass LSA protections.",
+	    "bypassurl": "https://www.redcursor.com.au/blog/bypassing-lsa-protection-aka-protected-process-light-without-mimikatz-on-windows-10"
+	},
+	{
+	    "mitigation": "M1021",
+	    "description": "Your firewall team followed old guidance to block javascript.  Your help desk now is fielding calls from every employee about their browser not working.",
+	    "bypassurl": "https://www.sitepoint.com/disable-javascript-option/"
+	},
+	{
+	    "mitigation": "M1019",
+	    "description": "Your internal threat intel and risk analysis report has been posted to a public GitHub repo.",
+	    "bypassurl": "https://hbr.org/2019/03/the-marriott-breach-shows-just-how-inadequate-cyber-risk-disclosures-are"
+	}
+    ]
 }

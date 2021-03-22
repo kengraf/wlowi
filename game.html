@@ -35,30 +35,31 @@
 
     <section class="view hm-gradient" id="game">
       <div class="site-bg-img d-flex align-items-center">
-        <div class="container">
+        <div class="container-fluid">
           <div class="row no-gutters">
             <div class="col d-flex flex-column">
-              <div id="runDefense" class="center">
+              <div id="runDefense" class="d-flex justify-content-center">
               </div>
             </div>
           </div>
           <div class="row no-gutters">
-            <div class="col d-flex flex-column">
-              <div id="alertSpace"></div>
+            <div class="col">
+              <div id="alertSpace" class="d-flex justify-content-center"></div>
             </div>
           </div>
-          <div class="row no-gutters">
-            <div class="container col-12">
+          <div class="row no-gutters d-flex justify-content-center">
+            <div class=" col-10">
               <div class="row">
-                <div class="col-6 d-flex flex-column">
-                  <div id="mitigationArea" class="row"></div>
-                </div>
-                <div class="col-6 d-flex flex-column">
-                  <div id="defendArea" class="row" ondrop="dragDrop(event)" ondragover="allowDrop(event)"></div>
-                </div>
+                <div class="col">
+                  <div id="mitigationArea" class="row">
       <!-- Bulk of body generated programmatically by game.js -->
+                  </div>
+                </div>
               </div>
             </div>
+          </div>
+          <div class="row d-flex justify-content-center">
+           <button type="button" class="btn btn-default btn-danger" onclick="runDefense()"><h4>ATTACK</h4></button>
           </div>
         </div>
       </div>
