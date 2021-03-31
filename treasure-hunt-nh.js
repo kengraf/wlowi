@@ -34,7 +34,7 @@ var hunt = [
         "id": "3",
         "title": "Frost",
         "story": {
-            "image": "images/frost.png",
+            "image": "images/Frost.png",
             "link": "https://www.nhstateparks.org/visit/historic-sites/robert-frost-farm-historic-site",
             "imageCaption": "Robert Frost's simple two-story white clapboard farmhouse is typical of New England in the 1880s",
             "url": "https://www.poetryfoundation.org/poets/robert-frost"
