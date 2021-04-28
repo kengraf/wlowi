@@ -1,0 +1,135 @@
+{
+    "zoom": 2,
+    "lat": 20.0,
+    "lng": 0.0,
+    "puzzles": [
+     {
+        "id": "1",
+        "title": "International Spy Museum",
+        "story": {
+            "image": "images/Spy_Museum.jpg",
+            "link": "https://en.wikipedia.org/wiki/International_Spy_Museum",
+            "imageCaption": "Spy Museum Wiki page",
+            "url": "https://www.spymuseum.org/education-programs/educators/lesson-plans-activities/"
+            },
+        "position": { "lat": 38.88401, "lng": -77.02547 },
+        "link": "",
+        "riddle": "The site has downloadable <a href-'https://spy-museum.s3.amazonaws.com/'>workbooks.</a>What is the filename of the last modified public file?",
+        "answer": "208b605c01bc1fd2b9ad92a96f77a169a84643cdeb82a9e64204e23f501afa17371012ec4c2928fda5477f19eaecf9ff449e2accaef00c2d842bf9654e48a232.txt",
+        "md5": "c381f794ec3a5cb4ed3e42f37a346f97"
+
+    },
+     {
+        "id": "2",
+        "title": "Global Warming Haiku",
+        "story": {
+            "image": "images/haiku1.jpg",
+            "link": "https://climatesciencehaiku.tumblr.com/",
+            "imageCaption": "Source: Climate Science Haiku",
+            "url": "https://climate.nasa.gov/"
+            },
+        "position": { "lat": 4.17322, "lng": 73.50110 },
+        "link": "",
+        "riddle": "What language is this translation of the pindrop's haiku written in?<div><p class='text-center'>Ua fasefulu tausaga nei<br>Tamaiti o le a ola i le lalolagi<br>Seti e la matou filifiliga.<br> </p></div>",
+        "answer": "samoan",
+        "md5": "93197fd086e85d5baab6dfd37fdd12e6"
+
+    },
+     {
+        "id": "3",
+        "title": "Bashido Code",
+        "story": {
+            "image": "images/samurai.jpg",
+            "link": "http://www.pref.ishikawa.jp/siro-niwa/kanazawajou/e/index.html",
+            "imageCaption": "Kanazawa Castle",
+            "url": "https://en.wikipedia.org/wiki/Bushido"
+            },
+        "position": { "lat": 36.56682, "lng": 136.65999 },
+        "link": "",
+        "riddle": "Translate this to English:<div><p class='text-center'><br>名誉は権力を勝ち取らないかもしれませんが、それは尊敬を勝ち取ります。そして尊敬は力を得る。</p></div>",
+        "answer": "Honor may not win power, but it wins respect. And respect gains power.",
+        "md5": "faf7e504ebc16d7706e6eac3658a273c"
+
+    },
+     {
+        "id": "4",
+        "title": "Zimmermann Telegram",
+        "story": {
+            "image": "images/zimmermann.jpg",
+            "link": "https://en.wikipedia.org/wiki/Zimmermann_Telegram",
+            "imageCaption": "Wiki page",
+            "url": "https://hackaday.com/2017/01/26/the-zimmermann-telegram/"
+            },
+        "position": { "lat": 19.43815, "lng": -99.13407 },
+        "link": "",
+        "riddle": "Britain re-encoded the telegram encoded with cipher 7600 to what other cipher?",
+        "answer": "13040",
+        "md5": "9f2b49181d2539e79439f4c6a6716836"
+
+    },
+     {
+        "id": "5",
+        "title": "Ayers Rock",
+        "story": {
+            "image": "images/.png",
+            "link": "https://image-story",
+            "imageCaption": "Se",
+            "url": "http://more info"
+            },
+        "position": { "lat": -25.34352, "lng": 131.03672 },
+        "link": "",
+        "riddle": "Tirst?<div><p class='text-center'>deer, brook <br> </p></div>",
+        "answer": "",
+        "md5": ""
+
+    },
+     {
+        "id": "6",
+        "title": "Rosetta Stone",
+        "story": {
+            "image": "images/.png",
+            "link": "https://image-story",
+            "imageCaption": "Se",
+            "url": "http://more info"
+            },
+        "position": { "lat": 30.05146, "lng": 31.23374 },
+        "link": "",
+        "riddle": "Tirst?<div><p class='text-center'>deer, brook <br> </p></div>",
+        "answer": "",
+        "md5": ""
+
+    },
+     {
+        "id": "7",
+        "title": "GCHQ",
+        "story": {
+            "image": "images/.png",
+            "link": "https://image-story",
+            "imageCaption": "Se",
+            "url": "http://more info"
+            },
+        "position": { "lat": 51.89971, "lng": -2.12450 },
+        "link": "",
+        "riddle": "Tirst?<div><p class='text-center'>deer, brook <br> </p></div>",
+        "answer": "",
+        "md5": ""
+
+    },
+     {
+        "id": "8",
+        "title": "Virginia Hall",
+        "story": {
+            "image": "images/.png",
+            "link": "https://image-story",
+            "imageCaption": "Se",
+            "url": "http://more info"
+            },
+        "position": { "lat": 52.53242, "lng": 13.38351 },
+        "link": "",
+        "riddle": "Tirst?<div><p class='text-center'>deer, brook <br> </p></div>",
+        "answer": "",
+        "md5": ""
+
+    }
+    ]
+}

@@ -1,0 +1,135 @@
+{
+    "zoom": 4,
+    "lat": 38.91276,
+    "lng": -107.21064,
+    "puzzles": [
+     {
+        "id": "1",
+        "title": "Grace Hopper",
+        "story": {
+            "image": "images/gracehopper.jpg",
+            "link": "https://developer.ibm.com/blogs/ibm-at-grace-hopper-celebration-of-women-in-computing-2019/",
+            "imageCaption": "Celebration of Woman in Computing",
+            "url": "https://ghc.anitab.org/programs-and-awards/2020-acm-student-research-competition-winners/"
+            },
+        "position": { "lat": 47.60861, "lng": -122.31651 },
+        "link": "",
+        "riddle": "Her work allowed the creation of Cobol.  What is the message this program generates? <div><p class='text-left'>IDENTIFICATION DIVISION.<br>PROGRAM-ID. VARS.<br>DATA DIVISION.<br>WORKING-STORAGE SECTION.<br>01 a PIC X(4) VALUE 'ask'.<br>01 b PIC X(12) VALUE 'forgiveness'.<br>01 c PIC X(7) VALUE 'easier'.<br>01 d PIC X(3) VALUE 'it'.<br>01 e PIC X(3) VALUE 'is'.<br>01 f PIC X(4) VALUE 'get'.<br>01 h PIC X(3) VALUE 'to'.<br>01 i PIC X(10) VALUE 'permission'.<br>01 g PIC X(5) VALUE 'than'.<br> <br>PROCEDURE DIVISION.<br>DISPLAY \"{\"d e c h a b g d e h f i \"}\"<br>STOP RUN.<br></p></div>",
+        "answer": "{it is easier to ask forgiveness than it is to get permission}",
+        "md5": "f5bead7b3949c8b1a023cebc8001f0ba"
+
+    },
+     {
+        "id": "2",
+        "title": "Labyrinths",
+        "story": {
+            "image": "images/Labyrinth.jpg",
+            "link": "https://commons.wikimedia.org/w/index.php?curid=29661124",
+            "imageCaption": "Minotaurus",
+            "url": "ttps://en.wikipedia.org/wiki/Labyrinth"
+            },
+        "position": { "lat": 38.44590, "lng": -121.86406 },
+        "link": "",
+        "riddle": "Locate the town/city these labyrinths are located:<div class='text-center'><a href='./images/pumpkin-maze.jpg' target='_blank'>Pumpkin</a><br><a href='./images/pineapple-maze.jpg' target='_blank'>pineapple</a><br><a href='./images/sod-maze.jpg' target='_blank'>Sod</a><br><a href='./images/Mirror-maze.jpg' target='_blank'>Mirror</a><br><a href='./images/Glass-maze.png' target='_blank'>Glass</a><br><a href='./images/Corn-maze.jpg' target='_blank'>Corn</a><br><a href='./images/Lavender-maze.jpg' target='_blank'>Lavender</a><br><br><div> The answer is the names of towns/cities (without state) listed alphabetically",
+        "answer": "dixon kansas city mears minneapolis newport sterling wahiawa",
+        "md5": "815e2ef85204044ff171e580fd20bf18"
+
+    },
+     {
+        "id": "3",
+        "title": "Selma",
+        "story": {
+            "image": "images/selma_4.jpg",
+            "link": "https://www.nbcnews.com/news/nbcblk/selma-montgomery-5-things-you-may-not-know-about-bloody-n729276",
+            "imageCaption": "Police break up voting rights march in Selma",
+            "url": "https://www.legacy.com/news/culture-and-history/the-lives-martin-luther-king-touched/"
+            },
+        "position": { "lat": 32.40658, "lng": -87.02869 },
+        "link": "",
+        "riddle": "Hidden in these picture is a quote from Martin Luther King, Jr. <div class='text-center'><br><a href='./images/Selma_3.png' target='_blank'>Amelia Boynton</a><br><a href='./images/Selma_2.png' target='_blank'>Federal Marshal</a><br><a href='./images/Selma_1.png' target='_blank'>Montgomery</a><br><a href='./images/Selma_4.png' target='_blank'>Police beatings</a><br><br> Can you find and put the pieces together?",
+        "answer": "The end we seek is a society at peace with itself, a society that can live with its conscience. And that will be a day not of the white man, not of the black man. That will be the day of man as man.",
+        "md5": "7ec85967c9592782df5bda5225134c5b"
+
+    },
+     {
+        "id": "4",
+        "title": "John Jay - YESCA code",
+        "story": {
+            "image": "images/YESCAcode.jpg",
+            "link": "https://exhibitions.library.columbia.edu/exhibits/show/john_jay/diplomacy-4  ",
+            "imageCaption": "John Jay's YESCA code",
+            "url": "https://exhibitions.library.columbia.edu/exhibits/show/john_jay/in-service-to-the-new-nation--"
+            },
+        "position": { "lat": 40.80655, "lng": -73.95332 },
+        "link": "",
+        "riddle": "Find the papers archive of America's 1st Chief Justice. The library maintains an online exhibition.  Find cypher code page  (Diplomacy section, YESCA code).  Decode this message: 34 23 17 12: 26 23' 15 7 4 2 21. 16  27",
+        "answer": "spain wil:ln'othel.pamerica",
+        "md5": "1c9a7900b31753f4c35abb2dfa2eb878"
+
+    },
+     {
+        "id": "5",
+        "title": "Navajo code talkers",
+        "story": {
+            "image": "images/navajo-code-talkers.png",
+            "link": "https://www.youtube.com/watch?v=QmiqnAQTTCI",
+            "imageCaption": "Hear actual Navajo code",
+            "url": "https://www.cia.gov/stories/story/navajo-code-talkers-and-the-unbreakable-code/y"
+            },
+        "position": { "lat": 36.13125, "lng": -111.24041 },
+        "link": "",
+        "riddle": "Decipher the code below: <div class='text-center'><br>Tkin-Gloe-lh-A-Kha<br>Ah-Ya-Tsinne-Tkin-Tsin-Tliti-Tse-Nill<br></div>",
+        "answer": "Iwo Jima",
+        "md5": "702ba958ceaa6e0752c28024c0d25f1f"
+
+    },
+     {
+        "id": "6",
+        "title": "Pauline Cushman",
+        "story": {
+            "image": "images/Cushman.jpg",
+            "link": "https://en.wikipedia.org/wiki/Pauline_Cushman",
+            "imageCaption": "Cushman Wikipedia",
+            "url": "https://www.womenhistoryblog.com/2008/01/pauline-cushman.html"
+            },
+        "position": { "lat": 38.26186, "lng": -84.73984 },
+        "link": "",
+        "riddle": "She became a spy by toasting who?",
+        "answer": "Jefferson Davis",
+        "md5": "be945bce9ee1d93f47a79a3e9b45e775"
+
+    },
+     {
+        "id": "7",
+        "title": "Women's Suffrage",
+        "story": {
+            "image": "images/Suffragists_Parade.jpg",
+            "link": "https://en.wikipedia.org/wiki/Women%27s_suffrage_in_the_United_States",
+            "imageCaption": "Suffragists Parade",
+            "url": "https://en.wikipedia.org/wiki/Nineteenth_Amendment_to_the_United_States_Constitution"
+            },
+        "position": { "lat": 36.16663, "lng": -86.78423 },
+        "link": "",
+        "riddle": "Trivia: List alphabetically the 8 states that rejected the 19th amendment?",
+        "answer": "Alabama Delaware Georgia Louisiana Maryland Mississippi South Carolina Virginia",
+        "md5": "149ea0cd42e629d9afdc3b5f3892b933"
+
+    },
+     {
+        "id": "8",
+        "title": "Slave, Freed, Slave, Spy",
+        "story": {
+            "image": "images/mary-bowser.jpg",
+            "link": "http://theglindafactor.com/mary-richards-bowser/",
+            "imageCaption": "Mary Richards Bowser",
+            "url": "https://en.wikipedia.org/wiki/Mary_Bowser"
+            },
+        "position": { "lat": 37.54079, "lng": -77.42957 },
+        "link": "",
+        "riddle": "Mary Richards Bowser: A freed woman, she took the role of working as a slave for Jefferson Davis in the Confederate White House.  She used an SBOX cipher with Elizabeth Van Lew. Decipher <div class='text-center'><br>61 55 42 62 13 43 63 54 <br>  36 63 54 11 61 14 61 43 36 63 54<br><br></div>",
+        "answer": "Richmond Underground",
+        "md5": "d65fde9f2a8b35a5613e3035edd04692"
+
+    }
+    ]
+}
