@@ -69,66 +69,66 @@
     },
      {
         "id": "5",
-        "title": "Ayers Rock",
+        "title": "Uluru (Ayers Rock)",
         "story": {
-            "image": "images/.png",
-            "link": "https://image-story",
-            "imageCaption": "Se",
-            "url": "http://more info"
+            "image": "images/uluru.jpg",
+            "link": "https://en.wikipedia.org/wiki/Uluru",
+            "imageCaption": "Wiki image",
+            "url": "https://www.britannica.com/topic/Australian-Aboriginal"
             },
         "position": { "lat": -25.34352, "lng": 131.03672 },
         "link": "",
-        "riddle": "Tirst?<div><p class='text-center'>deer, brook <br> </p></div>",
-        "answer": "",
-        "md5": ""
+        "riddle": "Traditional Aboriginal healers are called what?",
+        "answer": "ngangkari",
+        "md5": "006eb58f67776b825e4a5c4881950d1c"
 
     },
      {
         "id": "6",
         "title": "Rosetta Stone",
         "story": {
-            "image": "images/.png",
-            "link": "https://image-story",
-            "imageCaption": "Se",
-            "url": "http://more info"
+            "image": "images/Rosetta_Stone.jpg",
+            "link": "https://en.wikipedia.org/wiki/Rosetta_Stone",
+            "imageCaption": "Wiki Iamge",
+            "url": "https://en.wikipedia.org/wiki/Rosetta_Stone#/media/File:Champollion_table.jpg"
             },
         "position": { "lat": 30.05146, "lng": 31.23374 },
         "link": "",
-        "riddle": "Tirst?<div><p class='text-center'>deer, brook <br> </p></div>",
-        "answer": "",
-        "md5": ""
+        "riddle": "<div class='text-center'><img src='images/hieroglyphs.png' style='width:300px;'></div>",
+        "answer": "phonetic translation",
+        "md5": "475129ec583ee000f5cff837fc7f595b"
 
     },
      {
         "id": "7",
         "title": "GCHQ",
         "story": {
-            "image": "images/.png",
-            "link": "https://image-story",
-            "imageCaption": "Se",
-            "url": "http://more info"
+            "image": "images/gchq.jpg",
+            "link": "https://www.gchq.gov.uk/",
+            "imageCaption": "The 13040",
+            "url": "https://en.wikipedia.org/wiki/GCHQ"
             },
         "position": { "lat": 51.89971, "lng": -2.12450 },
         "link": "",
-        "riddle": "Tirst?<div><p class='text-center'>deer, brook <br> </p></div>",
-        "answer": "",
-        "md5": ""
+        "riddle": "Can you follow the arrows to discover a two word answer (7,9)?<div><p class='text-center'><a href='images/gchq-puzzle.png' target='_blank'>Puzzle image</a><br>If you want to keep testing your skills, check out the <a href='https://twitter.com/GCHQ', target='_blank'>GCHQ Twitter account</a>, which publishes puzzles on a weekly basis. </p></div>",
+        "answer": "seasons greetings",
+        "md5": "5ba39c564ba587839e7e7f2f186685e3"
 
     },
      {
         "id": "8",
         "title": "Virginia Hall",
         "story": {
-            "image": "images/.png",
-            "link": "https://image-story",
-            "imageCaption": "Se",
-            "url": "http://more info"
+            "image": "images/viriginia-hall-portrait.jpg",
+            "link": "https://allthatsinteresting.com/virginia-hall",
+            "imageCaption": "Portrait",
+            "url": "https://en.wikipedia.org/wiki/Enigma_machine"
             },
         "position": { "lat": 52.53242, "lng": 13.38351 },
         "link": "",
-        "riddle": "Tirst?<div><p class='text-center'>deer, brook <br> </p></div>",
-        "answer": "",
-        "md5": ""
+        "riddle": "Decipher the message broadcasting the death of Hitler.  Use your Pringles machine to decipher the proper settings of the rotors for the message.  Set your rotors to AAA.   Decipher the message key 'SECURE'. Remember to rotate the right rotor before deciphering each letter.   The first 3 letters are the ring settings, the second 3 letters are the rotor's initial values.  Use CyberChef to decipher the actual message.  Your Pringle's machine is highly error prone and assumes ring settings of AAA.<div><p class='text-center' style='font-family: courier; font-size:14pt;' ><br>VJWWU YDNMG VFGJQ WDXTZ HPTMA XCDHP AIPYC YDEVT WNSKG ISAJR ZPQDW LTTPF ETDLH RSUAO JVBKI DFKJX VWJIO YOTCY MNBUY EUFJP WNBMG MWWUO GBIOK LUIUI KCVME SMVUN QHODQ KKPDC LEJMS REBES GXPTZ NIBTR CKGZF ETPNP WYIBG FWIZX DFCGS PQPBJ QLWDE VASNK VTZDG OFMKE MYTXB MWRPQ CUBRA ORYUL KYLUN YEJTM JOKST PDOLN WGKEA CFBOG XAOXZ KTNIJ LXQMX KWZYI FQZRG GJBHT NEOAD RUIZO BPDIC XSXQQ QTJGG<br> </p></div>The enigma cipher doesn't care about whitespace or punctuation.  Both aid frequency analysis.  Parse the message so you understand it.  The SUBMIT button doesn't care about whitespace either.Note: If you brave enough to try this using your Pringle's machine.  Shade the following letters left-to-right to simulate the proper ring setting (SDM).",
+        "answer": "VJWWU YDNMG VFGJQ WDXTZ HPTMA XCDHP AIPYC YDEVT WNSKG ISAJR ZPQDW LTTPF ETDLH RSUAO JVBKI DFKJX VWJIO YOTCY MNBUY EUFJP WNBMG MWWUO GBIOK LUIUI KCVME SMVUN QHODQ KKPDC LEJMS REBES GXPTZ NIBTR CKGZF ETPNP WYIBG FWIZX DFCGS PQPBJ QLWDE VASNK VTZDG OFMKE MYTXB MWRPQ CUBRA ORYUL KYLUN YEJTM JOKST PDOLN WGKEA CFBOG XAOXZ KTNIJ LXQMX KWZYI FQZRG GJBHT NEOAD RUIZO BPDIC XSXQQ QTJGG",
+        "md5": "d87fa58933889d6dbeb6ab3b5c864fa2"
 
     }
     ]
