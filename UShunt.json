@@ -26,7 +26,7 @@
             "image": "images/Labyrinth.jpg",
             "link": "https://commons.wikimedia.org/w/index.php?curid=29661124",
             "imageCaption": "Minotaurus",
-            "url": "ttps://en.wikipedia.org/wiki/Labyrinth"
+            "url": "https://en.wikipedia.org/wiki/Labyrinth"
             },
         "position": { "lat": 38.44590, "lng": -121.86406 },
         "link": "",
@@ -39,7 +39,7 @@
         "id": "3",
         "title": "Selma",
         "story": {
-            "image": "images/selma_4.jpg",
+            "image": "images/selma_4.png",
             "link": "https://www.nbcnews.com/news/nbcblk/selma-montgomery-5-things-you-may-not-know-about-bloody-n729276",
             "imageCaption": "Police break up voting rights march in Selma",
             "url": "https://www.legacy.com/news/culture-and-history/the-lives-martin-luther-king-touched/"
@@ -74,7 +74,7 @@
             "image": "images/navajo-code-talkers.png",
             "link": "https://www.youtube.com/watch?v=QmiqnAQTTCI",
             "imageCaption": "Hear actual Navajo code",
-            "url": "https://www.cia.gov/stories/story/navajo-code-talkers-and-the-unbreakable-code/y"
+            "url": "https://www.cia.gov/stories/story/navajo-code-talkers-and-the-unbreakable-code/"
             },
         "position": { "lat": 36.13125, "lng": -111.24041 },
         "link": "",
