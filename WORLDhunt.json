@@ -87,7 +87,7 @@
         "id": "6",
         "title": "Rosetta Stone",
         "story": {
-            "image": "images/Rosetta_Stone.jpg",
+            "image": "images/Rosetta_Stone.JPG",
             "link": "https://en.wikipedia.org/wiki/Rosetta_Stone",
             "imageCaption": "Wiki Iamge",
             "url": "https://en.wikipedia.org/wiki/Rosetta_Stone#/media/File:Champollion_table.jpg"
@@ -119,7 +119,7 @@
         "id": "8",
         "title": "Virginia Hall",
         "story": {
-            "image": "images/viriginia-hall-portrait.jpg",
+            "image": "images/virginia-hall-portrait.jpg",
             "link": "https://allthatsinteresting.com/virginia-hall",
             "imageCaption": "Portrait",
             "url": "https://en.wikipedia.org/wiki/Enigma_machine"
