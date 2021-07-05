@@ -39,7 +39,7 @@ function createRiddleCard(riddle) {
         '<div id="collapse' + riddle.id + '" class="accordion-collapse collapse"',
         'aria-labelledby="card' + riddle.id + '" data-bs-parent="#accordionDiv">',
         '<div class="accordion-body">' + riddle.riddle,
-        '<input type="text" placeholder="Answer: ' + riddle.answer + '" id="answer' + riddle.id + '">',
+        '<input type="text" placeholder="Answer" id="answer' + riddle.id + '">',
         '<button id="button' + riddle.id + '" onclick="validAnswer(' + riddle.id + ')" ',
         'class="btn btn-primary">Submit</button></div></div></div>',
     ].join('\n');
