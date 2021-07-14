@@ -14,7 +14,7 @@
             },
         "position": { "lat": 38.88401, "lng": -77.02547 },
         "link": "",
-        "riddle": "Who is the highest scoring student on the UNH team?",
+        "riddle": "Who is the highest scoring student on the UNH team?<br>Note: If you have privacy concerns you can register with an alias and 10 minute email.",
         "answer": "mdelrio",
         "md5": "6d57a8f48da1bf7864b48e5eea45349b"
 
@@ -128,7 +128,7 @@
         "link": "",
         "riddle": "Decipher the message broadcasting the death of Hitler.  Use your Pringles machine to decipher the proper settings of the rotors for the message.  Set your rotors to AAA.   Decipher the message key 'SECURE'. Remember to rotate the right rotor before deciphering each letter.   The first 3 letters are the ring settings, the second 3 letters are the rotor's initial values.  Use CyberChef to decipher the actual message.  Your Pringle's machine is highly error prone and assumes ring settings of AAA.<div><p class='text-center' style='font-family: courier; font-size:14pt;' ><br>VJWWU YDNMG VFGJQ WDXTZ HPTMA XCDHP AIPYC YDEVT WNSKG ISAJR ZPQDW LTTPF ETDLH RSUAO JVBKI DFKJX VWJIO YOTCY MNBUY EUFJP WNBMG MWWUO GBIOK LUIUI KCVME SMVUN QHODQ KKPDC LEJMS REBES GXPTZ NIBTR CKGZF ETPNP WYIBG FWIZX DFCGS PQPBJ QLWDE VASNK VTZDG OFMKE MYTXB MWRPQ CUBRA ORYUL KYLUN YEJTM JOKST PDOLN WGKEA CFBOG XAOXZ KTNIJ LXQMX KWZYI FQZRG GJBHT NEOAD RUIZO BPDIC XSXQQ QTJGG<br> </p></div>The enigma cipher doesn't care about whitespace or punctuation.  Both aid frequency analysis.  Parse the message so you understand it.  The SUBMIT button doesn't care about whitespace either.Note: If you brave enough to try this using your Pringle's machine.  Shade the following letters left-to-right to simulate the proper ring setting (SDM).",
         "answer": "WAREM ERGEN CYMES SAGET OALLT HEFOL LOWIN GISTO BEANN OUNCE DIMME DIATE LYIHA VEREC EIVED THEFO LLOWI NGORD ERINP LACEO FFORM ERREI CHSMA RSCHA LLGOR INGTH EFUHR ERHAS APPOI NTEDY OUHER RGROS SADMI RALAS HISSU CCESS ORWRI TTENA UTHOR IZATI ONONT HEWAY EFFEC TIVEI MMEDI ATELY YOUAR ETOOR DERAL LMEAS UREST HATAR EREQU IREDB YTHEP RESEN TSITU ATION SIGNE DREIC HSLEI TERBO RMANN",
-        "md5": "d87fa58933889d6dbeb6ab3b5c864fa2"
+        "md5": "f3d81cee4b5249e913a9dc36996390a8"
 
     }
     ]
