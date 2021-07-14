@@ -46,7 +46,7 @@
         "position": { "lat": 42.87173, "lng": -71.29488 },
          "riddle": "<div>3882 3405 5375 3882 5952</div>In a one-part code, the code groups are assigned to the letters, words or phrases that they represent in a logical order - typically, alphabetical order. <br>The above message - which you may find familiar - has been encrypted using a one-part code, in which the code groups 0000 to 9999 represent 10,000 of the commonest English words in alphabetically order<br><a href='https://github.com/first20hours/google-10000-english/blob/master/google-10000-english.txt'>Google 10000 english words</a>",
         "answer": "good fences make good neighbors",
-        "md5": "313c5a0c4f51067d79d19f61ebf0a2bc"
+        "md5": "e7cb2ebc4e1215c75d09fdfb749eb87c"
 
     },
     {
@@ -61,7 +61,7 @@
         "position": { "lat": 44.05080, "lng": -71.56672 },
          "riddle": "Rail fences are great for managing livestock, not so good at preventing attacks. Who is the poem about?  FYI: Almost all of the rail fences in the south were consumed by the Confederate army for firewood during the Civil War. Who is the message about?<div><p class='text-center'>Wom  &nbsp&nbspo smiagW &nbspoidthedro<br>tmihh .a faattdfnPokeI a e nhd i horncfrSrn tateinn eehu;A henclc &nbspanfrrg cgAhloiec<br>hnncstns &nbspnv ineao g<br>&nbspuhac irdApddttwnnel n<br>avedeoasnKnu<br>eor na Tdahm.Autbee<br>c dmude.Ema kdrf<br>&nbspln i adi oCu Eoc erwoas tn ie<br>lenh ltdde &nbspuwl so ib&nbsp<br></p></div>",
         "answer": "kancamagus",
-        "md5": "535d9851c65660ce73ccc26eec603d6d"
+        "md5": "831a9fe21921e5d72f07f726dec960b4"
 
     },
     {
@@ -77,7 +77,7 @@
         "position": { "lat": 43.01458, "lng": -71.47075 },
         "riddle": "wHiLe oN a huNtiNG anD trapPiNG trip alOng thE bakER rIVer, a tribUTaRy of thE pemigEWasSet river, He wAs caPTUrEd by AbenAkI WarrIOrS And BrOugHt baCH To cAnaDa But nOT bEFore wArniNG hiS brOThEr wIlLiaM to PadDLe Away iN hIs CanoE",
          "answer": "Live free or die: Death is not the worst of evils",
-        "md5": "ae1419049c12f0ea48902d20e7317459"
+        "md5": "80dd9584b5206655d285e2faf7c80c5b"
 
     },
     {
@@ -92,7 +92,7 @@
         "position": { "lat": 43.13048, "lng": -70.91770 },
         "riddle": "Which location is most northerly?<div><p class='text-center'>746P+X8 Born<br>37CQ+HX Raided<br>M2G6+2R Captured<br>66CJ+5P Rejoined Washington<br>27W8+4M Expedition<br>43JJ+4W Died</p></div>",
         "answer": "746P+X8",
-        "md5": "ec53e2155843b13d25650765c020fad3 "
+        "md5": "ddd7cf168f3865a8af4fd53d465d66cd"
 
     },
     {
@@ -107,7 +107,7 @@
         "position": { "lat": 44.41941, "lng": -71.47489 },
         "riddle": "Some might have called him: <div><p class='text-center'>66.7.95.53.6 <br>95.68.53.20.7 <br>74.18 <br>75.34.18.6.1 <br>32.28.92.16</p></div>",
         "answer": "DyNAmIC AmErICaN WAr ReSeArCH GeNiUS",
-        "md5": "64f6f7f978163b5183aa0c9ff79a31b5"
+        "md5": "704aa25fc606ea065ede5482106a5a1a"
 
     },
     {
@@ -122,7 +122,7 @@
         "position": { "lat": 43.07596, "lng": -70.75732 },
         "riddle": "Follow the Portsmouth Black Heritage Trail.  Which location does not have a trail marker?<div><p class='text-center'>ducks.stands.drag<br>excuse.factor.chose<br>space.beans.fault<br>truly.honest.onion<br>hello.forced.hoot<br>torch.dusty.precautions<br>spell.puzzle.weds<br>slide.sulk.others<br>action.rich.robot</p></div>",
         "answer": "action.rich.robot",
-        "md5": "f7f464df7777cbf6285ff96608e26f89"
+        "md5": "5721ef49616a60ebe1abaf140420bdf7"
 
     }
 ]
