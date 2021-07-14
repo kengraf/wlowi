@@ -5,18 +5,18 @@
     "puzzles": [
      {
         "id": "1",
-        "title": "International Spy Museum",
+        "title": "Hack The Box",
         "story": {
-            "image": "images/Spy_Museum.jpg",
-            "link": "https://en.wikipedia.org/wiki/International_Spy_Museum",
-            "imageCaption": "Spy Museum Wiki page",
-            "url": "https://www.spymuseum.org/education-programs/educators/lesson-plans-activities/"
+            "image": "images/hackthebox.jpg",
+            "link": "https://app.hackthebox.eu/home",
+            "imageCaption": "NSA outreach effort",
+            "url": "https://www.nsa.gov/about/cryptologic-heritage/museum/"
             },
         "position": { "lat": 38.88401, "lng": -77.02547 },
         "link": "",
-        "riddle": "The site has downloadable <a href-'https://spy-museum.s3.amazonaws.com/'>workbooks.</a>What is the filename of the last modified public file?",
-        "answer": "208b605c01bc1fd2b9ad92a96f77a169a84643cdeb82a9e64204e23f501afa17371012ec4c2928fda5477f19eaecf9ff449e2accaef00c2d842bf9654e48a232.txt",
-        "md5": "c381f794ec3a5cb4ed3e42f37a346f97"
+        "riddle": "Who is the highest scoring student on the UNH team?",
+        "answer": "mdelrio",
+        "md5": "6d57a8f48da1bf7864b48e5eea45349b"
 
     },
      {
