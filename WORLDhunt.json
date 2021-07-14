@@ -7,7 +7,7 @@
         "id": "1",
         "title": "Hack The Box",
         "story": {
-            "image": "images/hackthebox.jpg",
+            "image": "images/hackthebox.png",
             "link": "https://app.hackthebox.eu/home",
             "imageCaption": "NSA outreach effort",
             "url": "https://www.nsa.gov/about/cryptologic-heritage/museum/"
