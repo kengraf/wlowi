@@ -16,7 +16,7 @@
         "link": "",
         "riddle": "Her work allowed the creation of Cobol.  What is the message this program generates? <div><p class='text-left'>IDENTIFICATION DIVISION.<br>PROGRAM-ID. VARS.<br>DATA DIVISION.<br>WORKING-STORAGE SECTION.<br>01 a PIC X(4) VALUE 'ask'.<br>01 b PIC X(12) VALUE 'forgiveness'.<br>01 c PIC X(7) VALUE 'easier'.<br>01 d PIC X(3) VALUE 'it'.<br>01 e PIC X(3) VALUE 'is'.<br>01 f PIC X(4) VALUE 'get'.<br>01 h PIC X(3) VALUE 'to'.<br>01 i PIC X(10) VALUE 'permission'.<br>01 g PIC X(5) VALUE 'than'.<br> <br>PROCEDURE DIVISION.<br>DISPLAY \"{\"d e c h a b g d e h f i \"}\"<br>STOP RUN.<br></p></div>",
         "answer": "{it is easier to ask forgiveness than it is to get permission}",
-        "md5": "f5bead7b3949c8b1a023cebc8001f0ba"
+        "md5": "e5a8bb4ec48816c24891061d7d3e58f4"
 
     },
      {
@@ -30,7 +30,7 @@
             },
         "position": { "lat": 38.44590, "lng": -121.86406 },
         "link": "",
-        "riddle": "Locate the town/city these labyrinths are located:<div class='text-center'><a href='./images/pumpkin-maze.jpg' target='_blank'>Pumpkin</a><br><a href='./images/pineapple-maze.jpg' target='_blank'>Pineapple</a><br><a href='./images/sod-maze.jpg' target='_blank'>Sod</a><br><a href='./images/Mirror-maze.jpg' target='_blank'>Mirror</a><br><a href='./images/Glass-maze.png' target='_blank'>Glass</a><br><a href='./images/Corn-maze.jpg' target='_blank'>Corn</a><br><a href='./images/Lavender-maze.jpg' target='_blank'>Lavender</a><br><br><div> The answer is the names of towns/cities (without state) listed alphabetically",
+        "riddle": "Locate the town/city these labyrinths are located:<div class='text-center'><a href='./images/pumpkin-maze.jpg' target='_blank'>Pumpkin</a><br><a href='./images/pineapple-maze.jpg' target='_blank'>Pineapple</a><br><a href='./images/sod-maze.jpg' target='_blank'>Sod</a><br><a href='./images/mirror-maze.jpg' target='_blank'>Mirror</a><br><a href='./images/glass-maze.png' target='_blank'>Glass</a><br><a href='./images/corn-maze.jpg' target='_blank'>Corn</a><br><a href='./images/lavender-maze.jpg' target='_blank'>Lavender</a><br><br><div> The answer is the names of towns/cities (without state) listed alphabetically",
         "answer": "dixon kansas city mears minneapolis newport sterling wahiawa",
         "md5": "815e2ef85204044ff171e580fd20bf18"
 
