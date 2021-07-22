@@ -25,13 +25,13 @@
         "position": { "lat": 43.25553, "lng": -72.43126 },
         "story": {
             "image": "/images/BASICmarker.jpg",
-            "link": "https://www.concordmonitor.com/historical-marker-BASIC-computer-language-22133666",
+            "link": "https://granitegeek.concordmonitor.com/2019/06/11/finally-a-historical-marker-that-talks-about-something-important/",
             "imageCaption": "Road marker",
             "url": "https://www.concordmonitor.com/historical-marker-BASIC-computer-language-22133666"
             },
         "riddle": "What puzzle are we solving? <a href='basicpuzzle.txt'>Source Code</a>",
-        "answer": "Abenaki",
-        "md5": "5584445c6425888fc463902aa40d0ec5"
+        "answer": "Eight Queens",
+        "md5": "d18c687eb3884a9885f9ac7b93d12a6c"
 
     },
     {
