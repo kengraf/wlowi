@@ -21,15 +21,15 @@
     },
     {
         "id": "2",
-        "title": "Susannah Willard Johnson",
+        "title": "BASIC",
         "position": { "lat": 43.25553, "lng": -72.43126 },
         "story": {
-            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Fort_at_Number_4%2C_view%2C_Charlestown_NH.jpg/320px-Fort_at_Number_4%2C_view%2C_Charlestown_NH.jpg",
-            "link": "https://commons.wikimedia.org/w/index.php?search=fort+4+charlestown&title=Special:MediaSearch&go=Go&type=image",
-            "imageCaption": "Fort #4",
-            "url": "https://en.wikipedia.org/wiki/Susannah_Willard_Johnson"
+            "image": "/images/BASICmarker.jpg",
+            "link": "https://www.concordmonitor.com/historical-marker-BASIC-computer-language-22133666",
+            "imageCaption": "Road marker",
+            "url": "https://www.concordmonitor.com/historical-marker-BASIC-computer-language-22133666"
             },
-        "riddle": "She said: 'But in an instant a crowd of savages, fixed horribly for war, rushed furiously in. I screamed and begged my friends to ask for quarter'.  The name of her eldest son is the XOR key you need.<div><p class='text-center'>MhsJGAAFHHk=</p></div>",
+        "riddle": "What puzzle are we solving? <href src="basicpuzzle.txt">",
         "answer": "Abenaki",
         "md5": "5584445c6425888fc463902aa40d0ec5"
 
