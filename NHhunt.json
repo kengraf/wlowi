@@ -29,7 +29,7 @@
             "imageCaption": "Road marker",
             "url": "https://www.concordmonitor.com/historical-marker-BASIC-computer-language-22133666"
             },
-        "riddle": "What puzzle are we solving? <href src="basicpuzzle.txt">",
+        "riddle": "What puzzle are we solving? <a href='basicpuzzle.txt'>Source Code</a>",
         "answer": "Abenaki",
         "md5": "5584445c6425888fc463902aa40d0ec5"
 
