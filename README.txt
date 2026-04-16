@@ -1,3 +1,8 @@
+On 16-APR-2026 the implementation at https://wlowi.kengraf.com was moth-balled and this repo archived.
+- Screenshot of the former implementation:
+![screenshot of app](images/index.html-archive.png)
+
+
 Directory Structure
 -------------------
 css\              - Stylesheets CSS files for the template.
